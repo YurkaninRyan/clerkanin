@@ -16,6 +16,9 @@ export default function NavItems() {
         <Link to="/accomadations">Accomadations</Link>
       </li>
       <li className="NavItems__item">
+        <Link to="/registry">Registry</Link>
+      </li>
+      <li className="NavItems__item">
         <Link to="our-story">Our Story</Link>
       </li>
     </ul>

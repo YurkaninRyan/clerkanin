@@ -18,7 +18,13 @@ export default function Layout(props) {
   return (
     <>
       <div>
-        <main style={{ display: "flex " }}>
+        <main
+          style={{
+            display: "flex",
+            minHeight: "100vh",
+            background: "var(--white)",
+          }}
+        >
           <div style={{ flex: "0 0 auto" }}>
             <NavItems />
           </div>
