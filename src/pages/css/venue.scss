@@ -1,0 +1,30 @@
+.Venue {
+  .Venue__heading {
+    color: #444;
+  }
+
+  .Venue__external-icon svg {
+    color: #000;
+    fill: #000;
+    width: 0.75em;
+  }
+
+  .Venue__middle-content {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 0 24px;
+  }
+}
+
+.Venue__details {
+  flex: 1 0 auto;
+  margin: 0 16px 16px 0;
+  max-width: 550px;
+  min-width: 550px;
+}
+
+.Venue__map {
+  flex: 0 0 auto;
+  height: 366px;
+  width: 550px;
+}

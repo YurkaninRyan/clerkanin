@@ -1,36 +1,51 @@
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
+import classnames from "classnames"
 
 import NavItems from "../NavItems/NavItems"
+
 import "./Layout.scss"
 
 export default function Layout(props) {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
+  const [isMobile, setIsMobile] = React.useState(false)
+  const [isNavOpen, setNavOpen] = React.useState(false)
+  const cnMain = classnames("Layout", {
+    "is-mobile": isMobile,
+  })
+  const cnIcon = classnames("Layout__header-hamburger", {
+    "is-active": isNavOpen,
+  })
+  const cnNav = classnames("Layout__main-nav", {
+    "is-open": isNavOpen,
+  })
+
+  React.useEffect(() => {
+    if (isMobile || window.innerWidth > 750) {
+      return
     }
-  `)
+
+    setIsMobile(true)
+  })
 
   return (
-    <>
-      <div>
-        <main
-          style={{
-            display: "flex",
-            minHeight: "100vh",
-            background: "var(--white)",
-          }}
-        >
-          <div style={{ flex: "0 0 auto" }}>
-            <NavItems />
-          </div>
-          <div style={{ flex: 1 }}>{props.children}</div>
-        </main>
-      </div>
-    </>
+    <div className={cnMain}>
+      <header className="Layout__header">
+        {isMobile && (
+          <span className={cnIcon} onClick={() => setNavOpen(!isNavOpen)}>
+            <FontAwesomeIcon icon={faBars} />
+          </span>
+        )}
+        <span>Clerkanin Wedding</span>
+      </header>
+      <main className="Layout__main">
+        <div className={cnNav}>
+          <NavItems />
+        </div>
+        <div className="Layout__main-content">
+          <div className="Layout__main-padder">{props.children}</div>
+        </div>
+      </main>
+    </div>
   )
 }

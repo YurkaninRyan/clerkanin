@@ -3,23 +3,34 @@ import { Link } from "gatsby"
 
 import "./NavItems.scss"
 
+function ActiveLink(props) {
+  return (
+    <Link activeClassName="is-active" {...props}>
+      {props.children}
+    </Link>
+  )
+}
+
 export default function NavItems() {
   return (
     <ul className="NavItems" role="navigation">
       <li className="NavItems__item">
-        <Link to="/venue">Venue</Link>
+        <ActiveLink to="/">Home</ActiveLink>
       </li>
       <li className="NavItems__item">
-        <Link to="/schedule">Schedule</Link>
+        <ActiveLink to="/venue/">Venue</ActiveLink>
       </li>
       <li className="NavItems__item">
-        <Link to="/accomadations">Accomadations</Link>
+        <ActiveLink to="/schedule/">Schedule</ActiveLink>
       </li>
       <li className="NavItems__item">
-        <Link to="/registry">Registry</Link>
+        <ActiveLink to="/accommodations/">Accommodations</ActiveLink>
       </li>
       <li className="NavItems__item">
-        <Link to="our-story">Our Story</Link>
+        <ActiveLink to="/registry/">Registry</ActiveLink>
+      </li>
+      <li className="NavItems__item">
+        <ActiveLink to="/our-story/">Our Story</ActiveLink>
       </li>
     </ul>
   )

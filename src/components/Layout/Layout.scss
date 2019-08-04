@@ -1,15 +1,84 @@
 
+.Layout {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+
+  &.is-mobile {
+    .Layout__main-content {
+      min-width: 100vw;
+    }
+    .Layout__main-nav {
+      flex: 0 0 auto;
+      max-width: 0;
+      overflow: hidden;
+      transition: max-width 0.15s;
+
+      &.is-open {
+        max-width: 210px;
+      }
+    }
+  }
+}
+
+.Layout__header {
+  background: var(--moss);
+  box-shadow: 0 0px 4px 0 rgba(0,0,0,.5);
+  color: var(--white);
+  flex: 0;
+  font-family: "Great Vibes", cursive;
+  font-size: 1.4rem;
+  padding: 24px;
+  z-index: 1;
+}
+
+.Layout__header-hamburger {
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 16px 0 0;
+  padding: 6px 8px;
+
+  &.is-active, &:hover {
+    background: var(--sage);
+  }
+}
+
+.Layout__main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.Layout__main-content {
+  flex: 1;
+  overflow: auto;
+}
+
+.Layout__main-padder {
+  margin: 36px 24px 24px;
+}
+
+.Layout__main-nav {
+  flex: 0 0 auto;
+}
+
 
 html {
-  --rose: #d6bab8;
+  --rose: #927a78;
   --sage: #768e84;
   --white: #fbf9f8;
-  font-family: sans-serif;
+  --moss: #6d8479;
+  --black: #444;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
 body {
+  color: var(--black);
+  fill: var(--black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
@@ -49,6 +118,7 @@ template {
 }
 a {
   background-color: transparent;
+  color: var(--rose);
   -webkit-text-decoration-skip: objects;
 }
 a:active,
@@ -70,7 +140,7 @@ dfn {
 }
 h1 {
   font-size: 2em;
-  margin: 0.67em 0;
+  margin: 0.25em 0;
 }
 mark {
   background-color: #ff0;
@@ -208,7 +278,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: Montserrat, Georgia, 'Times New Roman', Times, serif;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -230,12 +300,11 @@ img {
 }
 h1 {
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat, Georgia, 'Times New Roman', Times, serif;
   font-size: 2.25rem;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 1.45rem;
+  margin-bottom: .6rem;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -247,12 +316,11 @@ h1 {
 }
 h2 {
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat, Georgia, 'Times New Roman', Times, serif;
   font-size: 1.62671rem;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 1.45rem;
+  margin-bottom: .5rem;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -264,8 +332,7 @@ h2 {
 }
 h3 {
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat, Georgia, 'Times New Roman', Times, serif;
   font-size: 1.38316rem;
   font-weight: bold;
   line-height: 1.1;
@@ -281,12 +348,11 @@ h3 {
 }
 h4 {
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat, Georgia, 'Times New Roman', Times, serif;
   font-size: 1rem;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 1.45rem;
+  margin-bottom: .5rem;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
@@ -298,8 +364,7 @@ h4 {
 }
 h5 {
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat, Georgia, 'Times New Roman', Times, serif;
   font-size: 0.85028rem;
   font-weight: bold;
   line-height: 1.1;
@@ -315,8 +380,7 @@ h5 {
 }
 h6 {
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Montserrat, Georgia, 'Times New Roman', Times, serif;
   font-size: 0.78405rem;
   font-weight: bold;
   line-height: 1.1;

@@ -4,6 +4,7 @@
   margin: 0;
   padding: 12px 24px;
   width: 100%;
+  width: 225px;
 }
 
 .NavItems__item {
@@ -19,5 +20,10 @@
   a {
     color: var(--white);
     text-decoration: none;
+  }
+
+  a.is-active {
+    font-weight: 600;
+    text-decoration: underline;
   }
 }

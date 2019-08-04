@@ -3,12 +3,12 @@ import { Link } from "gatsby"
 
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo"
-import ImageOfUs from "../components/ImageOfUs/ImageOfUs"
+import ImageOfUs from "../components/images/ImageOfUs/ImageOfUs"
 
 export default function Index() {
   return (
     <Layout>
-      <SEO title="Clerkanin Wedding" />
+      <SEO title="Home | Clerkanin Wedding" />
       <div style={{ maxHeight: "100vh", overflow: "hidden" }}>
         <ImageOfUs />
       </div>
