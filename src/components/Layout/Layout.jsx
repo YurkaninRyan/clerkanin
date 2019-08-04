@@ -46,7 +46,7 @@ export default function Layout(props) {
           </span>
         )}
         {!isMobile && (
-          <ul className="Layout__header-items">
+          <ul className="Layout__header-items is-left">
             <li className="Layout__header-item">
               <ActiveLink to="/">Home</ActiveLink>
             </li>

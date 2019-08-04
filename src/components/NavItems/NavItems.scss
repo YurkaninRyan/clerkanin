@@ -25,6 +25,10 @@
     text-decoration: none;
   }
 
+  a:hover {
+    font-weight: 600px;
+  }
+
   a.is-active {
     font-weight: 600;
     text-decoration: underline;
