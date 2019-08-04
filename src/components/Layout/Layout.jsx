@@ -17,7 +17,7 @@ function ActiveLink(props) {
 }
 
 export default function Layout(props) {
-  const [isMobile, setIsMobile] = React.useState(false)
+  const [isMobile, setIsMobile] = React.useState(null)
   const [isNavOpen, setNavOpen] = React.useState(false)
   const cnMain = classnames("Layout", {
     "is-mobile": isMobile,
@@ -30,12 +30,16 @@ export default function Layout(props) {
   })
 
   React.useEffect(() => {
-    if (isMobile || window.innerWidth > 1010) {
-      return
+    if (isMobile === null && window.innerWidth <= 1010) {
+      setIsMobile(true)
+    } else if (isMobile === null) {
+      setIsMobile(false)
     }
-
-    setIsMobile(true)
   })
+
+  if (isMobile === null) {
+    return null
+  }
 
   return (
     <div className={cnMain}>
@@ -48,7 +52,7 @@ export default function Layout(props) {
         {!isMobile && (
           <ul className="Layout__header-items is-left">
             <li className="Layout__header-item">
-              <ActiveLink to="/">Home</ActiveLink>
+              <ActiveLink to="/">Our Story</ActiveLink>
             </li>
 
             <li className="Layout__header-item">
@@ -69,7 +73,7 @@ export default function Layout(props) {
               <ActiveLink to="/registry/">Registry</ActiveLink>
             </li>
             <li className="Layout__header-item">
-              <ActiveLink to="/our-story/">Our Story</ActiveLink>
+              <ActiveLink to="/rsvp/">RSVP</ActiveLink>
             </li>
           </ul>
         )}

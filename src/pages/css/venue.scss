@@ -5,9 +5,11 @@
   }
 
   .Venue__external-icon svg {
-    color: #000;
-    fill: #000;
-    width: 0.75em;
+    color: var(--rose);
+    fill: var(--rose);
+    height: 0.3em;
+    margin-bottom: 4px;
+    width: 0.3em;
   }
 
   .Venue__middle-content {
@@ -33,7 +35,8 @@
 }
 
 .Venue__details-ball {
-  background: var(--pink);
+  background: var(--white);
+  border: 2px solid var(--pink);
   border-radius: 50%;
   cursor: pointer;
   flex: 0 0 auto;
@@ -43,6 +46,7 @@
 
   &.is-active {
     background: var(--rose);
+    border: 2px solid var(--rose);
   }
 }
 

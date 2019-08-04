@@ -109,7 +109,7 @@ export default function Venue() {
 
   return (
     <Layout>
-      <SEO title="Venue | Ryan & Alana" />
+      <SEO title="Venue" />
 
       <section className="Venue">
         <div className="Venue__heading">

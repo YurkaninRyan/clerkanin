@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Ryan & Alana`,
+    title: `Ryan & Alana's Wedding`,
     description: `Ryan and Alana are getting married!  This website has everything you need.`,
     author: `@YurkaninRyan`,
   },
@@ -21,7 +21,7 @@ module.exports = {
             family: `Amatic SC`,
           },
           {
-            family: `Oswald`,
+            family: `Andika`,
             variants: [`400`, `600`, `700`],
           },
         ],

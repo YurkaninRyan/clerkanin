@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 export default function Accommodations() {
   return (
     <Layout>
-      <SEO title="Accommodations | Ryan & Alana" />
+      <SEO title="Accommodations" />
       Accom
     </Layout>
   )

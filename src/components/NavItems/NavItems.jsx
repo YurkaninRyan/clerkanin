@@ -15,7 +15,7 @@ export default function NavItems() {
   return (
     <ul className="NavItems" role="navigation">
       <li className="NavItems__item">
-        <ActiveLink to="/">Home</ActiveLink>
+        <ActiveLink to="/">Our Story</ActiveLink>
       </li>
       <li className="NavItems__item">
         <ActiveLink to="/venue/">Venue</ActiveLink>
@@ -30,7 +30,7 @@ export default function NavItems() {
         <ActiveLink to="/registry/">Registry</ActiveLink>
       </li>
       <li className="NavItems__item">
-        <ActiveLink to="/our-story/">Our Story</ActiveLink>
+        <ActiveLink to="/rsvp/">RSVP</ActiveLink>
       </li>
     </ul>
   )

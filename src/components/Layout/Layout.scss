@@ -8,6 +8,7 @@
   &.is-mobile {
     .Layout__main-content {
       min-width: 100vw;
+      z-index: 1;
     }
     .Layout__main-nav {
       flex: 0 0 auto;
@@ -39,7 +40,7 @@
   font-size: 4.5rem;
   justify-content: center;
   padding: 36px 24px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .Layout__header-items {
@@ -88,6 +89,7 @@
   border-radius: 4px;
   cursor: pointer;
   display: inline-block;
+  font-size: 1.2rem;
   margin: 0 16px 0 0;
   padding: 6px 8px;
 
@@ -104,12 +106,15 @@
 }
 
 .Layout__main-content {
+  box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.5);
   flex: 1;
   overflow: auto;
 }
 
 .Layout__main-padder {
-  margin: 36px 24px 24px;
+  margin: 0 auto;
+  max-width: 45em;
+  padding: 36px 24px 24px;
 }
 
 .Layout__main-nav {
@@ -195,7 +200,7 @@ h1 {
 }
 mark {
   background-color: #ff0;
-  color: #000;
+  color: var(--black);
 }
 small {
   font-size: 80%;
@@ -329,7 +334,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
+  font-family: Andika, Georgia, "Times New Roman", Times, serif;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -367,7 +372,7 @@ h1 {
 }
 h2 {
   color: inherit;
-  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
+  font-family: Andika, Georgia, "Times New Roman", Times, serif;
   font-size: 1.62671rem;
   font-weight: bold;
   line-height: 1.1;
@@ -383,7 +388,7 @@ h2 {
 }
 h3 {
   color: inherit;
-  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
+  font-family: Andika, Georgia, "Times New Roman", Times, serif;
   font-size: 1.38316rem;
   font-weight: bold;
   line-height: 1.1;
@@ -399,7 +404,7 @@ h3 {
 }
 h4 {
   color: inherit;
-  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
+  font-family: Andika, Georgia, "Times New Roman", Times, serif;
   font-size: 1rem;
   font-weight: bold;
   line-height: 1.1;
@@ -415,7 +420,7 @@ h4 {
 }
 h5 {
   color: inherit;
-  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
+  font-family: Andika, Georgia, "Times New Roman", Times, serif;
   font-size: 0.85028rem;
   font-weight: bold;
   line-height: 1.1;
@@ -431,7 +436,7 @@ h5 {
 }
 h6 {
   color: inherit;
-  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
+  font-family: Andika, Georgia, "Times New Roman", Times, serif;
   font-size: 0.78405rem;
   font-weight: bold;
   line-height: 1.1;
