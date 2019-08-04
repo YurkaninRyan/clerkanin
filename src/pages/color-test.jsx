@@ -6,6 +6,7 @@ export default function ColorTest() {
       <div style={{ flex: 1, background: "var(--moss)" }} />
       <div style={{ flex: 1, background: "var(--sage)" }} />
       <div style={{ flex: 1, background: "var(--rose)" }} />
+      <div style={{ flex: 1, background: "var(--pink)" }} />
       <div style={{ flex: 1, background: "var(--white)" }} />
     </div>
   )

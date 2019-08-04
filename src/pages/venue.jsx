@@ -1,6 +1,7 @@
 import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
+import classnames from "classnames"
 import {
   GoogleMap,
   Marker,
@@ -11,8 +12,30 @@ import {
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import MaasImage from "../components/images/MaasImage/MaasImage"
+import MaasImage2 from "../components/images/MaasImage2/MaasImage2"
+import MaasImage3 from "../components/images/MaasImage3/MaasImage3"
 
 import "./css/venue.scss"
+
+function useInterval(callback, delay) {
+  const savedCallback = React.useRef()
+
+  // Remember the latest callback.
+  React.useEffect(() => {
+    savedCallback.current = callback
+  }, [callback])
+
+  // Set up the interval.
+  React.useEffect(() => {
+    function tick() {
+      savedCallback.current()
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay)
+      return () => clearInterval(id)
+    }
+  }, [delay])
+}
 
 function Description() {
   return (
@@ -60,7 +83,30 @@ const Map = withScriptjs(
   })
 )
 
+function DetailsBall(props) {
+  const cn = classnames("Venue__details-ball", {
+    "is-active": props.active,
+  })
+
+  return <div className={cn} {...props} />
+}
+
 export default function Venue() {
+  const [count, setCount] = React.useState(0)
+  const [isRotating, setRotating] = React.useState(true)
+  useInterval(
+    () => {
+      const next = count + 1
+      setCount(next % 3)
+    },
+    isRotating ? 6000 : null
+  )
+
+  function updateCount(count) {
+    setRotating(false)
+    setCount(count)
+  }
+
   return (
     <Layout>
       <SEO title="Venue | Clerkanin Wedding" />
@@ -77,7 +123,7 @@ export default function Venue() {
               <FontAwesomeIcon icon={faExternalLinkAlt} />
             </a>
           </h1>
-          <h4>1325 N Randolph St, Philadelphia, PA 19122</h4>
+          <h6>1325 N Randolph St, Philadelphia, PA 19122</h6>
           <h6>
             <a
               href="https://www.google.com/maps/dir//Maas+Building,+1325+N+Randolph+St,+Philadelphia,+PA+19122/@40.1273579,-75.346435,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c6c8722a2cde35:0x4c1ba74ba873a077!2m2!1d-75.1452789!2d39.9720698!3e3"
@@ -90,7 +136,23 @@ export default function Venue() {
 
         <div className="Venue__middle-content">
           <div className="Venue__details">
-            <MaasImage />
+            {count === 0 && <MaasImage />}
+            {count === 1 && <MaasImage2 />}
+            {count === 2 && <MaasImage3 />}
+            <div className="Venue__details-balls">
+              <DetailsBall
+                active={count === 0}
+                onClick={() => updateCount(0)}
+              />
+              <DetailsBall
+                active={count === 1}
+                onClick={() => updateCount(1)}
+              />
+              <DetailsBall
+                active={count === 2}
+                onClick={() => updateCount(2)}
+              />
+            </div>
           </div>
           <div className="Venue__map">
             <Map

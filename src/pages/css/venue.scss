@@ -1,6 +1,7 @@
 .Venue {
   .Venue__heading {
     color: #444;
+    margin: 0 0 24px;
   }
 
   .Venue__external-icon svg {
@@ -21,6 +22,28 @@
   margin: 0 16px 16px 0;
   max-width: 550px;
   min-width: 550px;
+}
+
+.Venue__details-balls {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 0;
+  width: 100%;
+}
+
+.Venue__details-ball {
+  background: var(--pink);
+  border-radius: 50%;
+  cursor: pointer;
+  flex: 0 0 auto;
+  height: 12px;
+  margin: 0 8px 0 0;
+  width: 12px;
+
+  &.is-active {
+    background: var(--rose);
+  }
 }
 
 .Venue__map {
