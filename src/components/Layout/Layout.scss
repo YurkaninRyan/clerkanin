@@ -19,18 +19,57 @@
         max-width: 210px;
       }
     }
+
+    .Layout__header {
+      font-size: 2.5rem;
+      justify-content: flex-start;
+      padding: 24px;
+    }
   }
 }
 
 .Layout__header {
+  align-items: center;
   background: var(--moss);
   box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.5);
   color: var(--white);
+  display: flex;
   flex: 0;
-  font-family: "Great Vibes", cursive;
-  font-size: 1.4rem;
-  padding: 24px;
+  font-family: "Amatic SC", cursive;
+  font-size: 4.5rem;
+  justify-content: center;
+  padding: 36px;
   z-index: 1;
+}
+
+.Layout__header-items {
+  color: var(--white);
+  display: flex;
+  font-size: 1.75rem;
+  margin: 0;
+  min-width: 300px;
+}
+
+.Layout__header-item {
+  flex: 0 0 auto;
+  list-style: none;
+  margin: 0 12px 0 0;
+
+  a {
+    color: var(--white);
+    text-decoration: none;
+    text-decoration-skip-ink: none;
+    text-decoration-style: wavy;
+
+    &.is-active {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+  }
+}
+
+.Layout__header-name {
+  margin: 0 12px;
 }
 
 .Layout__header-hamburger {
@@ -278,7 +317,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
+  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -300,8 +339,8 @@ img {
 }
 h1 {
   color: inherit;
-  font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
-  font-size: 2.25rem;
+  font-family: "Amatic SC", cursive;
+  font-size: 2.75rem;
   font-weight: bold;
   line-height: 1.1;
   margin-bottom: 0.6rem;
@@ -316,7 +355,7 @@ h1 {
 }
 h2 {
   color: inherit;
-  font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
+  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
   font-size: 1.62671rem;
   font-weight: bold;
   line-height: 1.1;
@@ -332,7 +371,7 @@ h2 {
 }
 h3 {
   color: inherit;
-  font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
+  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
   font-size: 1.38316rem;
   font-weight: bold;
   line-height: 1.1;
@@ -348,7 +387,7 @@ h3 {
 }
 h4 {
   color: inherit;
-  font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
+  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
   font-size: 1rem;
   font-weight: bold;
   line-height: 1.1;
@@ -364,7 +403,7 @@ h4 {
 }
 h5 {
   color: inherit;
-  font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
+  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
   font-size: 0.85028rem;
   font-weight: bold;
   line-height: 1.1;
@@ -380,7 +419,7 @@ h5 {
 }
 h6 {
   color: inherit;
-  font-family: Montserrat, Georgia, "Times New Roman", Times, serif;
+  font-family: Oswald, Georgia, "Times New Roman", Times, serif;
   font-size: 0.78405rem;
   font-weight: bold;
   line-height: 1.1;

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Clerkanin Wedding`,
+    title: `Ryan & Alana`,
     description: `Ryan and Alana are getting married!  This website has everything you need.`,
     author: `@YurkaninRyan`,
   },
@@ -18,10 +18,10 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Great Vibes`,
+            family: `Amatic SC`,
           },
           {
-            family: `Montserrat`,
+            family: `Oswald`,
             variants: [`400`, `600`, `700`],
           },
         ],
@@ -33,8 +33,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Clerkanin Wedding 2020`,
-        short_name: `Clerkanin`,
+        name: `Ryan & Alana`,
+        short_name: `R&A`,
         start_url: `/`,
         background_color: `#768e84`,
         theme_color: `#768e84`,

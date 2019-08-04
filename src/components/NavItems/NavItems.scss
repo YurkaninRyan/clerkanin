@@ -1,15 +1,18 @@
 .NavItems {
   background: var(--sage);
+  font-family: "Amatic SC", cursive;
+  font-size: 1.75rem;
   height: 100%;
   margin: 0;
-  padding: 12px 24px;
+  padding: 24px 24px;
+  text-decoration-skip-ink: none;
   width: 100%;
   width: 225px;
 }
 
 .NavItems__item {
   list-style: none;
-  margin: 12px 0;
+  margin: 12px 0 16px;
   &:first-child {
     margin: 0 0 12px;
   }

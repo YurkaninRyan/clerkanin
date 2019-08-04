@@ -8,7 +8,7 @@ import ImageOfUs from "../components/images/ImageOfUs/ImageOfUs"
 export default function Index() {
   return (
     <Layout>
-      <SEO title="Home | Clerkanin Wedding" />
+      <SEO title="Home | Ryan & Alana" />
       <div style={{ maxHeight: "100vh", overflow: "hidden" }}>
         <ImageOfUs />
       </div>

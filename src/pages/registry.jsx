@@ -9,7 +9,7 @@ import "./css/registry.scss"
 export default function Registry() {
   return (
     <Layout>
-      <SEO title="Registry | Clerkanin Wedding" />
+      <SEO title="Registry | Ryan & Alana" />
       <div className="Registry">
         <div className="Registry__card">
           <a href="https://tgt.gifts/clerkaninwedding" target="_blank">

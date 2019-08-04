@@ -2,10 +2,19 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import classnames from "classnames"
+import { Link } from "gatsby"
 
 import NavItems from "../NavItems/NavItems"
 
 import "./Layout.scss"
+
+function ActiveLink(props) {
+  return (
+    <Link activeClassName="is-active" {...props}>
+      {props.children}
+    </Link>
+  )
+}
 
 export default function Layout(props) {
   const [isMobile, setIsMobile] = React.useState(false)
@@ -21,7 +30,7 @@ export default function Layout(props) {
   })
 
   React.useEffect(() => {
-    if (isMobile || window.innerWidth > 750) {
+    if (isMobile || window.innerWidth > 1010) {
       return
     }
 
@@ -36,12 +45,41 @@ export default function Layout(props) {
             <FontAwesomeIcon icon={faBars} />
           </span>
         )}
-        <span>Clerkanin Wedding</span>
+        {!isMobile && (
+          <ul className="Layout__header-items">
+            <li className="Layout__header-item">
+              <ActiveLink to="/">Home</ActiveLink>
+            </li>
+
+            <li className="Layout__header-item">
+              <ActiveLink to="/venue/">Venue</ActiveLink>
+            </li>
+            <li className="Layout__header-item">
+              <ActiveLink to="/accommodations/">Accommodations</ActiveLink>
+            </li>
+          </ul>
+        )}
+        <span className="Layout__header-name">Ryan & Alana</span>
+        {!isMobile && (
+          <ul className="Layout__header-items">
+            <li className="Layout__header-item">
+              <ActiveLink to="/schedule/">Schedule</ActiveLink>
+            </li>
+            <li className="Layout__header-item">
+              <ActiveLink to="/registry/">Registry</ActiveLink>
+            </li>
+            <li className="Layout__header-item">
+              <ActiveLink to="/our-story/">Our Story</ActiveLink>
+            </li>
+          </ul>
+        )}
       </header>
       <main className="Layout__main">
-        <div className={cnNav}>
-          <NavItems />
-        </div>
+        {isMobile && (
+          <div className={cnNav}>
+            <NavItems />
+          </div>
+        )}
         <div className="Layout__main-content">
           <div className="Layout__main-padder">{props.children}</div>
         </div>
