@@ -113,8 +113,11 @@
 
 .Layout__main-padder {
   margin: 0 auto;
-  max-width: 45em;
   padding: 36px 24px 24px;
+
+  p {
+    max-width: 45em;
+  }
 }
 
 .Layout__main-nav {
