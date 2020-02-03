@@ -1,0 +1,57 @@
+.Accomadations {
+  .Accomadations__heading {
+    color: #444;
+    margin: 0 0 24px;
+  }
+
+  .Accomadations__external-icon svg {
+    color: var(--rose);
+    fill: var(--rose);
+    height: 0.3em;
+    margin-bottom: 4px;
+    width: 0.3em;
+  }
+
+  .Accomadations__middle-content {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 0 24px;
+  }
+}
+
+.Accomadations__details {
+  flex: 1 0 auto;
+  margin: 0 16px 16px 0;
+  max-width: 550px;
+  min-width: 550px;
+}
+
+.Accomadations__details-balls {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 0;
+  width: 100%;
+}
+
+.Accomadations__details-ball {
+  background: var(--white);
+  border: 2px solid var(--pink);
+  border-radius: 50%;
+  cursor: pointer;
+  flex: 0 0 auto;
+  height: 12px;
+  margin: 0 8px 0 0;
+  width: 12px;
+
+  &.is-active {
+    background: var(--rose);
+    border: 2px solid var(--rose);
+  }
+}
+
+.Accomadations__map {
+  flex: 0 0 auto;
+  height: 366px;
+  width: 550px;
+}

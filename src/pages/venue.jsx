@@ -11,9 +11,9 @@ import {
 
 import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo"
-import MaasImage from "../components/images/MaasImage/MaasImage"
-import MaasImage2 from "../components/images/MaasImage2/MaasImage2"
-import MaasImage3 from "../components/images/MaasImage3/MaasImage3"
+import MaasImage from "../components/images/maas/MaasImage"
+import MaasImage2 from "../components/images/maas/MaasImage2"
+import MaasImage3 from "../components/images/maas/MaasImage3"
 
 import "./css/venue.scss"
 
@@ -74,7 +74,7 @@ const Map = withScriptjs(
   withGoogleMap(function Map(props) {
     return (
       <GoogleMap
-        defaultZoom={11}
+        defaultZoom={13}
         defaultCenter={{ lat: 39.9720698, lng: -75.1452789 }}
       >
         <Marker position={{ lat: 39.9720698, lng: -75.1452789 }}></Marker>
@@ -116,6 +116,7 @@ export default function Venue() {
           <h1>
             Maas Building{" "}
             <a
+              rel="noopener noreferrer"
               className="Venue__external-icon"
               href="http://www.maasbuilding.com/"
               target="_blank"
@@ -126,6 +127,7 @@ export default function Venue() {
           <h6>1325 N Randolph St, Philadelphia, PA 19122</h6>
           <h6>
             <a
+              rel="noopener noreferrer"
               href="https://www.google.com/maps/dir//Maas+Building,+1325+N+Randolph+St,+Philadelphia,+PA+19122/@40.1273579,-75.346435,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c6c8722a2cde35:0x4c1ba74ba873a077!2m2!1d-75.1452789!2d39.9720698!3e3"
               target="_blank"
             >

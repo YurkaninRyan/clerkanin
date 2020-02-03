@@ -17,7 +17,6 @@ function ActiveLink(props) {
 }
 
 export default function Layout(props) {
-  const [isMobile, setIsMobile] = React.useState(null)
   const [isNavOpen, setNavOpen] = React.useState(false)
   const cnMain = classnames("Layout", {
     "is-mobile": isMobile,
@@ -29,25 +28,15 @@ export default function Layout(props) {
     "is-open": isNavOpen,
   })
 
-  React.useEffect(() => {
-    if (isMobile === null && window.innerWidth <= 1010) {
-      setIsMobile(true)
-    } else if (isMobile === null) {
-      setIsMobile(false)
-    }
-  })
-
-  if (isMobile === null) {
-    return null
-  }
+  const isMobile = window.innerWidth <= 1010
 
   return (
     <div className={cnMain}>
       <header className="Layout__header">
         {isMobile && (
-          <span className={cnIcon} onClick={() => setNavOpen(!isNavOpen)}>
+          <button className={cnIcon} onClick={() => setNavOpen(!isNavOpen)}>
             <FontAwesomeIcon icon={faBars} />
-          </span>
+          </button>
         )}
         {!isMobile && (
           <ul className="Layout__header-items is-left">

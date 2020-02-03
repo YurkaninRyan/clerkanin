@@ -14,7 +14,11 @@ export default function Registry() {
         <h1>We need an ironing board</h1>
         <h5>and a few other things :)</h5>
         <div className="Registry__card">
-          <a href="http://tgt.gifts/clerkaninwedding" target="_blank">
+          <a
+            rel="noopener noreferrer"
+            href="http://tgt.gifts/clerkaninwedding"
+            target="_blank"
+          >
             <TargetImage />
           </a>
         </div>

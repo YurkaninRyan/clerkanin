@@ -1,5 +1,4 @@
 import React from "react"
-import Countdown from "react-countdown-now"
 
 import proposal from "../videos/proposal.mp4"
 
