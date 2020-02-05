@@ -56,7 +56,7 @@ function DesktopHeader() {
           <ActiveLink to="/registry/">Registry</ActiveLink>
         </li>
         <li className="Layout__header-item">
-          <ActiveLink to="/our-story/">Our Story</ActiveLink>
+          <ActiveLink to="/rsvp/">RSVP</ActiveLink>
         </li>
       </ul>
     </header>
@@ -82,10 +82,12 @@ export default function Layout(props) {
           <NavItems />
         </div>
 
-        <div className="Layout__main-content">
-          <div className="Layout__main-padder">{props.children}</div>
-        </div>
+        <div className="Layout__main-content">{props.children}</div>
       </main>
     </div>
   )
+}
+
+export function LayoutConstrained(props) {
+  return <div className="Layout__main-padder">{props.children}</div>
 }

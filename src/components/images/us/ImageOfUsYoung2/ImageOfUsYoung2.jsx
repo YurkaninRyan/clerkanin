@@ -2,10 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-export default function WyndhamImage() {
+export default function ImageOfUsYoung2() {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "wyndham.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "aryoung2.jpg" }) {
         childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid

@@ -30,7 +30,7 @@ export default function NavItems() {
         <ActiveLink to="/registry/">Registry</ActiveLink>
       </li>
       <li className="NavItems__item">
-        <ActiveLink to="/our-story/">Our Story</ActiveLink>
+        <ActiveLink to="/rsvp/">RSVP</ActiveLink>
       </li>
     </ul>
   )

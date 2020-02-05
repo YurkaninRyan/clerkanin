@@ -7,7 +7,7 @@ export default function ImageOfUsAdventure() {
     query {
       placeholderImage: file(relativePath: { eq: "aradventure.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }

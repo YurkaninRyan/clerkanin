@@ -7,7 +7,7 @@ export default function WyndhamImage3() {
     query {
       placeholderImage: file(relativePath: { eq: "wyndham3.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }

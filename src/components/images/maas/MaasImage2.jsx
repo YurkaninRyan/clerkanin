@@ -7,7 +7,7 @@ export default function MaasImage2() {
     query {
       placeholderImage: file(relativePath: { eq: "maas2.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }

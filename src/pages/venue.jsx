@@ -9,7 +9,7 @@ import {
   withGoogleMap,
 } from "react-google-maps"
 
-import Layout from "../components/Layout/Layout"
+import Layout, { LayoutConstrained } from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import MaasImage from "../components/images/maas/MaasImage"
 import MaasImage2 from "../components/images/maas/MaasImage2"
@@ -109,64 +109,66 @@ export default function Venue() {
 
   return (
     <Layout>
-      <SEO title="Venue" />
+      <LayoutConstrained>
+        <SEO title="Venue" />
 
-      <section className="Venue">
-        <div className="Venue__heading">
-          <h1>
-            Maas Building{" "}
-            <a
-              rel="noopener noreferrer"
-              className="Venue__external-icon"
-              href="http://www.maasbuilding.com/"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faExternalLinkAlt} />
-            </a>
-          </h1>
-          <h6>1325 N Randolph St, Philadelphia, PA 19122</h6>
-          <h6>
-            <a
-              rel="noopener noreferrer"
-              href="https://www.google.com/maps/dir//Maas+Building,+1325+N+Randolph+St,+Philadelphia,+PA+19122/@40.1273579,-75.346435,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c6c8722a2cde35:0x4c1ba74ba873a077!2m2!1d-75.1452789!2d39.9720698!3e3"
-              target="_blank"
-            >
-              Directions to the venue
-            </a>
-          </h6>
-        </div>
+        <section className="Venue">
+          <div className="Venue__heading">
+            <h1>
+              Maas Building{" "}
+              <a
+                rel="noopener noreferrer"
+                className="Venue__external-icon"
+                href="http://www.maasbuilding.com/"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faExternalLinkAlt} />
+              </a>
+            </h1>
+            <h6>1325 N Randolph St, Philadelphia, PA 19122</h6>
+            <h6>
+              <a
+                rel="noopener noreferrer"
+                href="https://www.google.com/maps/dir//Maas+Building,+1325+N+Randolph+St,+Philadelphia,+PA+19122/@40.1273579,-75.346435,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c6c8722a2cde35:0x4c1ba74ba873a077!2m2!1d-75.1452789!2d39.9720698!3e3"
+                target="_blank"
+              >
+                Directions to the venue
+              </a>
+            </h6>
+          </div>
 
-        <div className="Venue__middle-content">
-          <div className="Venue__details">
-            {count === 0 && <MaasImage />}
-            {count === 1 && <MaasImage2 />}
-            {count === 2 && <MaasImage3 />}
-            <div className="Venue__details-balls">
-              <DetailsBall
-                active={count === 0}
-                onClick={() => updateCount(0)}
-              />
-              <DetailsBall
-                active={count === 1}
-                onClick={() => updateCount(1)}
-              />
-              <DetailsBall
-                active={count === 2}
-                onClick={() => updateCount(2)}
+          <div className="Venue__middle-content">
+            <div className="Venue__details">
+              {count === 0 && <MaasImage />}
+              {count === 1 && <MaasImage2 />}
+              {count === 2 && <MaasImage3 />}
+              <div className="Venue__details-balls">
+                <DetailsBall
+                  active={count === 0}
+                  onClick={() => updateCount(0)}
+                />
+                <DetailsBall
+                  active={count === 1}
+                  onClick={() => updateCount(1)}
+                />
+                <DetailsBall
+                  active={count === 2}
+                  onClick={() => updateCount(2)}
+                />
+              </div>
+            </div>
+            <div className="Venue__map">
+              <Map
+                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgeidwk_KkPjgFaUC880HzQ_j4TtAifQc&v=3.exp&libraries=geometry,drawing,places"
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={<div style={{ height: `100%` }} />}
+                mapElement={<div style={{ height: `100%` }} />}
               />
             </div>
           </div>
-          <div className="Venue__map">
-            <Map
-              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgeidwk_KkPjgFaUC880HzQ_j4TtAifQc&v=3.exp&libraries=geometry,drawing,places"
-              loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `100%` }} />}
-              mapElement={<div style={{ height: `100%` }} />}
-            />
-          </div>
-        </div>
-        <Description />
-      </section>
+          <Description />
+        </section>
+      </LayoutConstrained>
     </Layout>
   )
 }

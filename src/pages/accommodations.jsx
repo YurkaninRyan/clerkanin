@@ -9,7 +9,7 @@ import {
   withGoogleMap,
 } from "react-google-maps"
 
-import Layout from "../components/Layout/Layout"
+import Layout, { LayoutConstrained } from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import WyndhamImage from "../components/images/wyndham/WyndhamImage"
 import WyndhamImage2 from "../components/images/wyndham/WyndhamImage2"
@@ -129,64 +129,75 @@ export default function Accomadations() {
 
   return (
     <Layout>
-      <SEO title="Accomadations" />
+      <LayoutConstrained>
+        <SEO title="Accomadations" />
 
-      <section className="Accomadations">
-        <div className="Accomadations__heading">
-          <h1>
-            Wyndham Philadelphia Historic District{" "}
-            <a
-              rel="noopener noreferrer"
-              className="Accomadations__external-icon"
-              href="https://www.wyndhamhotels.com/wyndham/philadelphia-pennsylvania/wyndham-philadelphia-historic-district/overview?CID=LC:HR::GGL:RIO:National:47153&iata=00093796"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faExternalLinkAlt} />
-            </a>
-          </h1>
-          <h6>400 Arch St, Philadelphia, PA 19106</h6>
-          <h6>
-            <a
-              rel="noopener noreferrer"
-              href="https://www.google.com/maps/dir//wyndham+old+city+hotel/@39.9520921,-75.1470951,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c6c88421a9f379:0xce18bea485fd9b80!2m2!1d-75.1469444!2d39.9522222"
-              target="_blank"
-            >
-              Directions to the hotel
-            </a>
-          </h6>
-        </div>
+        <section className="Accomadations">
+          <div className="Accomadations__heading">
+            <h1>
+              Wyndham Philadelphia Historic District{" "}
+              <a
+                rel="noopener noreferrer"
+                className="Accomadations__external-icon"
+                href="https://www.wyndhamhotels.com/wyndham/philadelphia-pennsylvania/wyndham-philadelphia-historic-district/overview?CID=LC:HR::GGL:RIO:National:47153&iata=00093796"
+                target="_blank"
+              >
+                <FontAwesomeIcon icon={faExternalLinkAlt} />
+              </a>
+            </h1>
+            <h6>400 Arch St, Philadelphia, PA 19106</h6>
+            <h6>
+              <a
+                rel="noopener noreferrer"
+                href="https://www.google.com/maps/dir//wyndham+old+city+hotel/@39.9520921,-75.1470951,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c6c88421a9f379:0xce18bea485fd9b80!2m2!1d-75.1469444!2d39.9522222"
+                target="_blank"
+              >
+                Directions to the hotel
+              </a>
+            </h6>
+            <h6>
+              <a
+                rel="noopener noreferrer"
+                href="https://book.passkey.com/e/50026297"
+                target="_blank"
+              >
+                Book your room in our wedding block
+              </a>
+            </h6>
+          </div>
 
-        <div className="Accomadations__middle-content">
-          <div className="Accomadations__details">
-            {count === 0 && <WyndhamImage />}
-            {count === 1 && <WyndhamImage2 />}
-            {count === 2 && <WyndhamImage3 />}
-            <div className="Accomadations__details-balls">
-              <DetailsBall
-                active={count === 0}
-                onClick={() => updateCount(0)}
-              />
-              <DetailsBall
-                active={count === 1}
-                onClick={() => updateCount(1)}
-              />
-              <DetailsBall
-                active={count === 2}
-                onClick={() => updateCount(2)}
+          <div className="Accomadations__middle-content">
+            <div className="Accomadations__details">
+              {count === 0 && <WyndhamImage />}
+              {count === 1 && <WyndhamImage2 />}
+              {count === 2 && <WyndhamImage3 />}
+              <div className="Accomadations__details-balls">
+                <DetailsBall
+                  active={count === 0}
+                  onClick={() => updateCount(0)}
+                />
+                <DetailsBall
+                  active={count === 1}
+                  onClick={() => updateCount(1)}
+                />
+                <DetailsBall
+                  active={count === 2}
+                  onClick={() => updateCount(2)}
+                />
+              </div>
+            </div>
+            <div className="Accomadations__map">
+              <Map
+                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgeidwk_KkPjgFaUC880HzQ_j4TtAifQc&v=3.exp&libraries=geometry,drawing,places"
+                loadingElement={<div style={{ height: `100%` }} />}
+                containerElement={<div style={{ height: `100%` }} />}
+                mapElement={<div style={{ height: `100%` }} />}
               />
             </div>
           </div>
-          <div className="Accomadations__map">
-            <Map
-              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgeidwk_KkPjgFaUC880HzQ_j4TtAifQc&v=3.exp&libraries=geometry,drawing,places"
-              loadingElement={<div style={{ height: `100%` }} />}
-              containerElement={<div style={{ height: `100%` }} />}
-              mapElement={<div style={{ height: `100%` }} />}
-            />
-          </div>
-        </div>
-        <Description />
-      </section>
+          <Description />
+        </section>
+      </LayoutConstrained>
     </Layout>
   )
 }

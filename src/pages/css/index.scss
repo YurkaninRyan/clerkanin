@@ -1,0 +1,9 @@
+.Home {
+  .gatsby-image-wrapper {
+    max-height: 50vh;
+
+    img {
+      object-position: 0 20% !important;
+    }
+  }
+}

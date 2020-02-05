@@ -7,7 +7,7 @@ export default function TargetImage() {
     query {
       placeholderImage: file(relativePath: { eq: "target.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
