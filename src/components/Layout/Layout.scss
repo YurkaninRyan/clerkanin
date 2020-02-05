@@ -5,7 +5,7 @@
   height: 100vh;
   overflow: hidden;
 
-  &.is-mobile {
+  @media (max-width: 1000px) {
     .Layout__main-content {
       min-width: 100vw;
       z-index: 1;
@@ -41,6 +41,18 @@
   justify-content: center;
   padding: 36px 24px;
   z-index: 2;
+}
+
+.Layout__header--desktop {
+  @media (max-width: 1000px) {
+    display: none;
+  }
+}
+
+.Layout__header--mobile {
+  @media (min-width: 1001px) {
+    display: none;
+  }
 }
 
 .Layout__header-items {
@@ -89,6 +101,7 @@
   background: transparent;
   border: none;
   border-radius: 4px;
+  color: var(--white);
   cursor: pointer;
   display: inline-block;
   font-size: 1.2rem;
@@ -115,6 +128,7 @@
 
 .Layout__main-padder {
   margin: 0 auto;
+  max-width: 1200px;
   padding: 36px 24px 24px;
 
   p {
@@ -124,6 +138,10 @@
 
 .Layout__main-nav {
   flex: 0 0 auto;
+
+  @media (min-width: 1001px) {
+    display: none;
+  }
 }
 
 html {

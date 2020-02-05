@@ -16,63 +16,72 @@ function ActiveLink(props) {
   )
 }
 
+function MobileHeader(props) {
+  const cnIcon = classnames("Layout__header-hamburger", {
+    "is-active": props.isActive,
+  })
+
+  return (
+    <header className="Layout__header Layout__header--mobile">
+      <button className={cnIcon} onClick={props.onClick}>
+        <FontAwesomeIcon icon={faBars} />
+      </button>
+      <span className="Layout__header-name">Ryan & Alana</span>
+    </header>
+  )
+}
+
+function DesktopHeader() {
+  return (
+    <header className="Layout__header Layout__header--desktop">
+      <ul className="Layout__header-items is-left">
+        <li className="Layout__header-item">
+          <ActiveLink to="/">Home</ActiveLink>
+        </li>
+
+        <li className="Layout__header-item">
+          <ActiveLink to="/venue/">Venue</ActiveLink>
+        </li>
+        <li className="Layout__header-item">
+          <ActiveLink to="/accommodations/">Accommodations</ActiveLink>
+        </li>
+      </ul>
+      <span className="Layout__header-name">Ryan & Alana</span>
+
+      <ul className="Layout__header-items">
+        <li className="Layout__header-item">
+          <ActiveLink to="/schedule/">Schedule</ActiveLink>
+        </li>
+        <li className="Layout__header-item">
+          <ActiveLink to="/registry/">Registry</ActiveLink>
+        </li>
+        <li className="Layout__header-item">
+          <ActiveLink to="/our-story/">Our Story</ActiveLink>
+        </li>
+      </ul>
+    </header>
+  )
+}
+
 export default function Layout(props) {
   const [isNavOpen, setNavOpen] = React.useState(false)
-  const cnMain = classnames("Layout", {
-    "is-mobile": isMobile,
-  })
-  const cnIcon = classnames("Layout__header-hamburger", {
-    "is-active": isNavOpen,
-  })
+
   const cnNav = classnames("Layout__main-nav", {
     "is-open": isNavOpen,
   })
 
-  const isMobile = window.innerWidth <= 1010
-
   return (
-    <div className={cnMain}>
-      <header className="Layout__header">
-        {isMobile && (
-          <button className={cnIcon} onClick={() => setNavOpen(!isNavOpen)}>
-            <FontAwesomeIcon icon={faBars} />
-          </button>
-        )}
-        {!isMobile && (
-          <ul className="Layout__header-items is-left">
-            <li className="Layout__header-item">
-              <ActiveLink to="/">Home</ActiveLink>
-            </li>
-
-            <li className="Layout__header-item">
-              <ActiveLink to="/venue/">Venue</ActiveLink>
-            </li>
-            <li className="Layout__header-item">
-              <ActiveLink to="/accommodations/">Accommodations</ActiveLink>
-            </li>
-          </ul>
-        )}
-        <span className="Layout__header-name">Ryan & Alana</span>
-        {!isMobile && (
-          <ul className="Layout__header-items">
-            <li className="Layout__header-item">
-              <ActiveLink to="/schedule/">Schedule</ActiveLink>
-            </li>
-            <li className="Layout__header-item">
-              <ActiveLink to="/registry/">Registry</ActiveLink>
-            </li>
-            <li className="Layout__header-item">
-              <ActiveLink to="/our-story/">Our Story</ActiveLink>
-            </li>
-          </ul>
-        )}
-      </header>
+    <div className="Layout">
+      <MobileHeader
+        isActive={isNavOpen}
+        onClick={() => setNavOpen(!isNavOpen)}
+      />
+      <DesktopHeader />
       <main className="Layout__main">
-        {isMobile && (
-          <div className={cnNav}>
-            <NavItems />
-          </div>
-        )}
+        <div className={cnNav}>
+          <NavItems />
+        </div>
+
         <div className="Layout__main-content">
           <div className="Layout__main-padder">{props.children}</div>
         </div>

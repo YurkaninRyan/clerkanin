@@ -15,15 +15,19 @@
   .Venue__middle-content {
     display: flex;
     flex-flow: row wrap;
-    margin: 0 0 24px;
+    margin: 0 -8px 24px;
   }
 }
 
 .Venue__details {
-  flex: 1 0 auto;
-  margin: 0 16px 16px 0;
+  flex: 1 0 100%;
+  margin: 0 8px 16px;
   max-width: 550px;
-  min-width: 550px;
+  min-width: 0;
+
+  .gatsby-image-wrapper {
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.5);
+  }
 }
 
 .Venue__details-balls {
@@ -51,7 +55,8 @@
 }
 
 .Venue__map {
-  flex: 0 0 auto;
+  box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.5);
   height: 366px;
+  margin: 0 8px 0;
   width: 550px;
 }
