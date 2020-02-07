@@ -1,0 +1,27 @@
+.Form__label {
+  display: block;
+  font-size: 1rem;
+  margin: 0 0 4px;
+}
+
+.Form__input {
+  border: 0;
+  border: 1px solid var(--black);
+  height: 35px;
+  margin-right: -1px;
+  max-width: 80vw;
+  vertical-align: middle;
+  width: 250px;
+}
+
+.Form__button {
+  appearance: none;
+  background: var(--moss);
+  border: 0;
+  border: 1px solid var(--moss);
+  border: 1px solid var(--black);
+  color: var(--white);
+  height: 35px;
+  letter-spacing: 0.5px;
+  vertical-align: middle;
+}

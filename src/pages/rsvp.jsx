@@ -1,25 +1,41 @@
 import React from "react"
 
-import Layout from "../components/Layout/Layout"
+import Layout, { LayoutConstrained } from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import InvitedList from "../components/InvitedList/InvitedList"
 import SelectedInvitee from "../components/SelectedInvitee/SelectedInvitee"
+import { Form, Label, Button, Input } from "../components/Form/Form"
 
 import { getFirebase } from "../firebase"
 
-function useInvitedSearch() {
-  const [search, setSearch] = React.useState("")
+function Searchbar(props) {
+  return (
+    <Form
+      className="SearchBar"
+      onSubmit={e => {
+        e.preventDefault()
+        props.onSubmit()
+      }}
+    >
+      <Label htmlFor="search">Search By Name</Label>
+      <Input value={props.value} onChange={props.onChange} />
+      <Button type="submit">Search</Button>
+    </Form>
+  )
+}
+
+export default function RSVP() {
   const [invited, setInvited] = React.useState([])
-  const [loading, setLoading] = React.useState(false)
-  const searching = Boolean(search)
+  const [filtered, setFiltered] = React.useState([])
+  const [search, setSearch] = React.useState("")
+  const [lastUsedSearch, setLastUsedSearch] = React.useState("")
+  const [selected, setSelected] = React.useState(null)
 
   React.useEffect(() => {
     getFirebase().then(async firebase => {
       const db = firebase.firestore()
-      setLoading(true)
       const invited = await db.collection("invited").get()
 
-      setLoading(false)
       setInvited(
         invited.docs.map(invitee => {
           return { id: invitee.id, ...invitee.data() }
@@ -28,30 +44,14 @@ function useInvitedSearch() {
     })
   }, [])
 
-  const onChange = e => {
-    setSearch(e.target.value)
+  function searchInvited() {
+    setLastUsedSearch(search)
+    setFiltered(
+      invited.filter(invitee =>
+        invitee.name.toLowerCase().includes(search.toLowerCase())
+      )
+    )
   }
-
-  const inputAttributes = {
-    value: search,
-    onChange: onChange,
-  }
-
-  return {
-    inputAttributes,
-    invited: searching
-      ? invited.filter(invitee =>
-          invitee.name.toLowerCase().includes(search.toLowerCase())
-        )
-      : [],
-    loading,
-    searching,
-  }
-}
-
-export default function RSVP() {
-  const { inputAttributes, invited, loading, searching } = useInvitedSearch()
-  const [selected, setSelected] = React.useState(null)
 
   async function handleUpdates(updates) {
     const firebase = await getFirebase()
@@ -68,20 +68,24 @@ export default function RSVP() {
   return (
     <Layout>
       <SEO title="RSVP" />
-      <input placeholder="First and last name please!" {...inputAttributes} />
-      {loading ? (
-        "Loading..."
-      ) : selected ? (
-        <SelectedInvitee
-          invitee={selected}
-          onBack={setSelected}
-          onUpdate={handleUpdates}
+      <LayoutConstrained>
+        <Searchbar
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          onSubmit={searchInvited}
         />
-      ) : invited.length ? (
-        <InvitedList invited={invited} onSelect={setSelected} />
-      ) : searching ? (
-        "No Results Found. :("
-      ) : null}
+        {selected ? (
+          <SelectedInvitee
+            invitee={selected}
+            onBack={setSelected}
+            onUpdate={handleUpdates}
+          />
+        ) : filtered.length ? (
+          <InvitedList invited={filtered} onSelect={setSelected} />
+        ) : Boolean(lastUsedSearch) ? (
+          "No Results Found. :("
+        ) : null}
+      </LayoutConstrained>
     </Layout>
   )
 }

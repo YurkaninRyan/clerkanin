@@ -1,0 +1,13 @@
+.InvitedList {
+  margin: 0;
+  padding: 0;
+}
+
+.InvitedList__item {
+  align-items: center;
+  border-bottom: 1px solid var(--moss);
+  display: flex;
+  justify-content: space-between;
+  max-width: 320px;
+  padding: 8px 0;
+}

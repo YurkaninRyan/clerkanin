@@ -85,22 +85,22 @@ CollapseList.defaultProps = {
 
 export default function RSVP() {
   const { analytics, loading } = useInvitedAnalytics()
-  // const [name, setName] = React.useState("")
-  // const [plusOne, setPlusOne] = React.useState(false)
+  const [name, setName] = React.useState("")
+  const [plusOne, setPlusOne] = React.useState(false)
 
-  // async function handleUpdates() {
-  //   const firebase = await getFirebase()
-  //   const db = firebase.firestore()
-  //   db.collection("invited").add({
-  //     name,
-  //     coming: "no",
-  //     plusOne,
-  //     plusOneName: "",
-  //   })
+  async function handleUpdates() {
+    const firebase = await getFirebase()
+    const db = firebase.firestore()
+    db.collection("invited").add({
+      name,
+      coming: "no",
+      plusOne,
+      plusOneName: "",
+    })
 
-  //   setName("")
-  //   setPlusOne(false)
-  // }
+    setName("")
+    setPlusOne(false)
+  }
 
   return (
     <Layout>
@@ -128,20 +128,20 @@ export default function RSVP() {
                 </li>
               ))}
             </CollapseList>
-            {/* <hr />
-      <div>
-        <label>Invitee Name:</label>
-        <input value={name} onChange={e => setName(e.target.value)} />
-      </div>
-      <div>
-        <label>has a plus one</label>
-        <input
-          type="checkbox"
-          checked={plusOne}
-          onChange={e => setPlusOne(e.target.checked)}
-        />
-      </div>
-      <button onClick={handleUpdates}>add new invitee</button> */}
+            <hr />
+            <div>
+              <label>Invitee Name:</label>
+              <input value={name} onChange={e => setName(e.target.value)} />
+            </div>
+            <div>
+              <label>has a plus one</label>
+              <input
+                type="checkbox"
+                checked={plusOne}
+                onChange={e => setPlusOne(e.target.checked)}
+              />
+            </div>
+            <button onClick={handleUpdates}>add new invitee</button>
           </>
         )}
       </LayoutConstrained>
