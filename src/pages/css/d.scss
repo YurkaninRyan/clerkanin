@@ -1,0 +1,23 @@
+.d__section {
+  margin: 0 0 16px;
+}
+
+.d__section-heading {
+  background: var(--white);
+  border: 1px solid var(--black);
+  cursor: pointer;
+  margin: 0 0 8px;
+  overflow: hidden;
+  padding: 4px 16px 4px 16px;
+  position: sticky;
+  text-overflow: ellipsis;
+  top: 0px;
+  white-space: nowrap;
+}
+
+.d__section-list {
+  margin: 0;
+  max-height: 50vh;
+  overflow: scroll;
+  padding: 0 40px;
+}

@@ -8,10 +8,13 @@ const config = {
 }
 
 let firebaseInstance
-export const getFirebase = firebase => {
+export const getFirebase = async () => {
   if (firebaseInstance) {
     return firebaseInstance
   }
+
+  const firebase = await import("firebase/app")
+  await import("firebase/firestore")
 
   firebase.initializeApp(config)
   firebaseInstance = firebase
