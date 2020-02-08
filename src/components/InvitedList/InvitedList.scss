@@ -1,6 +1,10 @@
 .InvitedList {
+  display: flex;
+  flex-direction: column;
   margin: 0;
-  padding: 0;
+  max-height: 100%;
+  overflow: auto;
+  padding: 16px 0 0;
 }
 
 .InvitedList__item {
@@ -8,6 +12,10 @@
   border-bottom: 1px solid var(--moss);
   display: flex;
   justify-content: space-between;
-  max-width: 320px;
   padding: 8px 0;
+
+  &:last-child {
+    border-bottom: none;
+    margin: 0;
+  }
 }

@@ -20,7 +20,6 @@
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-sharp": "^2.3.14",
-    "lodash.debounce": "^4.0.8",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",

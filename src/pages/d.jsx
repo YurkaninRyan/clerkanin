@@ -2,6 +2,8 @@ import React from "react"
 import Layout, { LayoutConstrained } from "../components/Layout/Layout"
 import SEO from "../components/seo"
 
+import { Form, Button, Input, Label } from "../components/Form/Form"
+
 import "./css/d.scss"
 
 import { getFirebase } from "../firebase"
@@ -129,19 +131,22 @@ export default function RSVP() {
               ))}
             </CollapseList>
             <hr />
-            <div>
-              <label>Invitee Name:</label>
-              <input value={name} onChange={e => setName(e.target.value)} />
-            </div>
-            <div>
-              <label>has a plus one</label>
-              <input
-                type="checkbox"
-                checked={plusOne}
-                onChange={e => setPlusOne(e.target.checked)}
-              />
-            </div>
-            <button onClick={handleUpdates}>add new invitee</button>
+            <Form onSubmit={handleUpdates}>
+              <div>
+                <Label>Invitee Name:</Label>
+                <Input value={name} onChange={e => setName(e.target.value)} />
+              </div>
+              <div>
+                <Label>Plus One?</Label>
+                <Input
+                  type="checkbox"
+                  checked={plusOne}
+                  onChange={e => setPlusOne(e.target.checked)}
+                />
+              </div>
+              <br />
+              <Button type="submit">add new invitee</Button>
+            </Form>
           </>
         )}
       </LayoutConstrained>

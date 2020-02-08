@@ -1,0 +1,17 @@
+.SelectedInvitee {
+  background: white;
+}
+
+.SelectedInvitee__buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 32px;
+
+  & > button {
+    margin-right: 8px;
+  }
+}
+
+.SelectedInvitee__form-spacer {
+  margin-bottom: 16px;
+}

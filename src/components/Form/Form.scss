@@ -1,27 +1,57 @@
+.Form {
+  margin-bottom: 0px;
+}
+
 .Form__label {
   display: block;
-  font-size: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
   margin: 0 0 4px;
 }
 
-.Form__input {
+.Form__input,
+.Form__select {
   border: 0;
   border: 1px solid var(--black);
   height: 35px;
-  margin-right: -1px;
-  max-width: 80vw;
+  max-width: 50vw;
+  padding: 0 4px;
   vertical-align: middle;
   width: 250px;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
 }
 
 .Form__button {
   appearance: none;
   background: var(--moss);
   border: 0;
-  border: 1px solid var(--moss);
   border: 1px solid var(--black);
   color: var(--white);
   height: 35px;
   letter-spacing: 0.5px;
   vertical-align: middle;
+
+  .Form__input + & {
+    margin-left: -1px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.Form__secondary-button {
+  appearance: none;
+  background: var(--white);
+  border: 0;
+  border: 1px solid var(--black);
+  color: var(--black);
+  height: 35px;
+  letter-spacing: 0.5px;
+  margin-right: 8px;
 }

@@ -29,9 +29,21 @@ export function Input(props) {
   return <input {...props} className="Form__input" />
 }
 
+export function Select(props) {
+  return <select {...props} className="Form__select" />
+}
+
 export function Button(props) {
   return (
     <button {...props} className="Form__button">
+      {props.children}
+    </button>
+  )
+}
+
+export function SecondaryButton(props) {
+  return (
+    <button {...props} className="Form__secondary-button">
       {props.children}
     </button>
   )

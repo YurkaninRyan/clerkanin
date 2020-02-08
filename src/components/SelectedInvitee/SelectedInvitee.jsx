@@ -1,66 +1,75 @@
 import React from "react"
 
-function InviteePlusOne(props) {
-  return (
-    <div>
-      <label htmlFor="guest">
-        You can bring a guest! Who are you bringing?
-      </label>
-      <input
-        required
-        id="guest"
-        value={props.value}
-        onChange={props.onChange}
-      />
-    </div>
-  )
-}
+import {
+  Form,
+  Select,
+  Input,
+  Label,
+  Button,
+  SecondaryButton,
+} from "../Form/Form"
+
+import "./SelectedInvitee.scss"
 
 export default function SelectedInvitee(props) {
-  const [guest, setGuest] = React.useState(props.invitee.plusOneName)
+  const [guest, setGuest] = React.useState(props.invitee.plusOneName || "")
   const [coming, setComing] = React.useState(props.invitee.coming)
+  const [updated, setUpdated] = React.useState(false)
 
-  const canBringGuestAndHasGivenOne = props.invitee.plusOne
-    ? guest !== ""
-    : true
+  const canBringGuestAndHasGivenOne =
+    props.invitee.plusOne && coming === "yes" ? guest !== "" : true
 
   const canUpdate =
     canBringGuestAndHasGivenOne &&
-    coming &&
     (guest !== props.invitee.plusOneName || coming !== props.invitee.coming)
 
   return (
-    <form
-      onSubmit={e => {
-        e.preventDefault()
+    <Form
+      onSubmit={() => {
+        setUpdated(true)
         props.onUpdate({ ...props.invitee, coming, plusOneName: guest })
       }}
     >
-      <div>
-        <button onClick={() => props.onBack()}>back</button>
+      <div className="SelectedInvitee__form-spacer">
+        <Label htmlFor="name">Name</Label>
+        <div id="name">{props.invitee.name}</div>
       </div>
-      <div>Name: {props.invitee.name}</div>
-      <div>
-        <label htmlFor="coming">Can you come?</label>
-        <select
+
+      <div className="SelectedInvitee__form-spacer">
+        <Label htmlFor="coming">Can you come?</Label>
+        <Select
           required
           id="coming"
           value={coming}
-          onChange={e => setComing(e.target.value)}
+          onChange={e => {
+            setComing(e.target.value)
+            if (e.target.value === "no") {
+              setGuest("")
+            }
+          }}
         >
           <option value="yes">Yes</option>
           <option value="no">No</option>
-        </select>
+        </Select>
       </div>
-      {props.invitee.plusOne && coming === "yes" && (
-        <InviteePlusOne
-          value={guest}
-          onChange={e => setGuest(e.target.value)}
-        />
+      {props.invitee.plusOne && (
+        <div className="SelectedInvitee__form-spacer">
+          <Label htmlFor="guest">Name of Plus One</Label>
+          <Input
+            required
+            disabled={coming === "no"}
+            id="guest"
+            value={guest}
+            onChange={e => setGuest(e.target.value)}
+          />
+        </div>
       )}
-      <button type="submit" disabled={!canUpdate}>
-        Update
-      </button>
-    </form>
+      <div className="SelectedInvitee__buttons">
+        <SecondaryButton onClick={() => props.onBack()}>Back</SecondaryButton>
+        <Button type="submit" disabled={!canUpdate}>
+          {updated ? "Updated!" : "Update"}
+        </Button>
+      </div>
+    </Form>
   )
 }

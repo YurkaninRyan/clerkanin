@@ -1,0 +1,32 @@
+.RSVP {
+  display: flex;
+  height: calc(100vh - 172px);
+  width: 100%;
+}
+
+.RSVP__form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 0 auto;
+  max-height: 100%;
+  max-width: 80vw;
+  overflow: hidden;
+  width: 401px;
+
+  @media (max-width: 850px) {
+    margin: 0 auto;
+  }
+}
+
+.RSVP__image {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 auto 0 36px;
+  max-width: 400px;
+
+  @media (max-width: 850px) {
+    display: none;
+  }
+}
