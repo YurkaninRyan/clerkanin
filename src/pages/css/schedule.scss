@@ -1,0 +1,20 @@
+.vertical-timeline:before {
+  background-color: var(--rose);
+  height: calc(100% - 164px);
+  top: 50px;
+}
+
+.vertical-timeline-element-icon {
+  background: #fff;
+  border: 4px solid var(--rose);
+  box-shadow: none;
+}
+
+.vertical-timeline-element-content {
+  border: 2px solid var(--moss);
+  box-shadow: none;
+}
+
+.vertical-timeline-element-content-arrow {
+  display: none;
+}
