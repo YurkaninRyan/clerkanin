@@ -148,9 +148,11 @@ html {
   --rose: #927a78;
   --pink: #caaba8;
   --sage: #768e84;
+  --algae: #aac5b9;
   --white: #fbf9f8;
   --moss: #6d8479;
-  --black: #444;
+  --black: #555;
+  --linen: #debdba;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -307,7 +309,7 @@ fieldset {
 }
 legend {
   box-sizing: border-box;
-  color: inherit;
+  color: var(--black);
   display: table;
   max-width: 100%;
   padding: 0;
@@ -356,7 +358,6 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
   font-family: Andika, Georgia, "Times New Roman", Times, serif;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -378,7 +379,7 @@ img {
   padding-top: 0;
 }
 h1 {
-  color: inherit;
+  color: var(--black);
   font-family: "Amatic SC", cursive;
   font-size: 2.75rem;
   font-weight: bold;
@@ -394,7 +395,7 @@ h1 {
   text-rendering: optimizeLegibility;
 }
 h2 {
-  color: inherit;
+  color: var(--black);
   font-family: Andika, Georgia, "Times New Roman", Times, serif;
   font-size: 1.62671rem;
   font-weight: bold;
@@ -410,7 +411,7 @@ h2 {
   text-rendering: optimizeLegibility;
 }
 h3 {
-  color: inherit;
+  color: var(--black);
   font-family: Andika, Georgia, "Times New Roman", Times, serif;
   font-size: 1.38316rem;
   font-weight: bold;
@@ -426,7 +427,7 @@ h3 {
   text-rendering: optimizeLegibility;
 }
 h4 {
-  color: inherit;
+  color: var(--black);
   font-family: Andika, Georgia, "Times New Roman", Times, serif;
   font-size: 1rem;
   font-weight: bold;
@@ -442,7 +443,7 @@ h4 {
   text-rendering: optimizeLegibility;
 }
 h5 {
-  color: inherit;
+  color: var(--black);
   font-family: Andika, Georgia, "Times New Roman", Times, serif;
   font-size: 0.85028rem;
   font-weight: bold;
@@ -458,7 +459,7 @@ h5 {
   text-rendering: optimizeLegibility;
 }
 h6 {
-  color: inherit;
+  color: var(--black);
   font-family: Andika, Georgia, "Times New Roman", Times, serif;
   font-size: 0.78405rem;
   font-weight: bold;
