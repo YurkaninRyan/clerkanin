@@ -24,7 +24,7 @@ export default function NavItems() {
         <ActiveLink to="/schedule/">Schedule</ActiveLink>
       </li>
       <li className="NavItems__item">
-        <ActiveLink to="/accommodations/">Accommodations</ActiveLink>
+        <ActiveLink to="/hotel/">Hotel</ActiveLink>
       </li>
       <li className="NavItems__item">
         <ActiveLink to="/registry/">Registry</ActiveLink>

@@ -1,10 +1,10 @@
-.Accomadations {
-  .Accomadations__heading {
+.Hotel {
+  .Hotel__heading {
     color: #444;
     margin: 0 0 24px;
   }
 
-  .Accomadations__external-icon svg {
+  .Hotel__external-icon svg {
     color: var(--rose);
     fill: var(--rose);
     height: 0.3em;
@@ -12,14 +12,14 @@
     width: 0.3em;
   }
 
-  .Accomadations__middle-content {
+  .Hotel__middle-content {
     display: flex;
     flex-flow: row wrap;
     margin: 0 -8px 24px;
   }
 }
 
-.Accomadations__details {
+.Hotel__details {
   flex: 1 0 100%;
   margin: 0 8px 16px;
   max-width: 550px;
@@ -30,7 +30,7 @@
   }
 }
 
-.Accomadations__details-balls {
+.Hotel__details-balls {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -38,7 +38,7 @@
   width: 100%;
 }
 
-.Accomadations__details-ball {
+.Hotel__details-ball {
   background: var(--white);
   border: 2px solid var(--pink);
   border-radius: 50%;
@@ -54,7 +54,7 @@
   }
 }
 
-.Accomadations__map {
+.Hotel__map {
   box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.5);
   height: 366px;
   margin: 0 8px 0;

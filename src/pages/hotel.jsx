@@ -15,7 +15,7 @@ import WyndhamImage from "../components/images/wyndham/WyndhamImage"
 import WyndhamImage2 from "../components/images/wyndham/WyndhamImage2"
 import WyndhamImage3 from "../components/images/wyndham/WyndhamImage3"
 
-import "./css/accomadations.scss"
+import "./css/hotel.scss"
 
 function useInterval(callback, delay) {
   const savedCallback = React.useRef()
@@ -104,14 +104,14 @@ const Map = withScriptjs(
 )
 
 function DetailsBall(props) {
-  const cn = classnames("Accomadations__details-ball", {
+  const cn = classnames("Hotel__details-ball", {
     "is-active": props.active,
   })
 
   return <div className={cn} {...props} />
 }
 
-export default function Accomadations() {
+export default function Hotel() {
   const [count, setCount] = React.useState(0)
   const [isRotating, setRotating] = React.useState(true)
   useInterval(
@@ -130,15 +130,15 @@ export default function Accomadations() {
   return (
     <Layout>
       <LayoutConstrained>
-        <SEO title="Accomadations" />
+        <SEO title="Hotel" />
 
-        <section className="Accomadations">
-          <div className="Accomadations__heading">
+        <section className="Hotel">
+          <div className="Hotel__heading">
             <h1>
               Wyndham Philadelphia Historic District{" "}
               <a
                 rel="noopener noreferrer"
-                className="Accomadations__external-icon"
+                className="Hotel__external-icon"
                 href="https://www.wyndhamhotels.com/wyndham/philadelphia-pennsylvania/wyndham-philadelphia-historic-district/overview?CID=LC:HR::GGL:RIO:National:47153&iata=00093796"
                 target="_blank"
               >
@@ -166,12 +166,12 @@ export default function Accomadations() {
             </h6>
           </div>
 
-          <div className="Accomadations__middle-content">
-            <div className="Accomadations__details">
+          <div className="Hotel__middle-content">
+            <div className="Hotel__details">
               {count === 0 && <WyndhamImage />}
               {count === 1 && <WyndhamImage2 />}
               {count === 2 && <WyndhamImage3 />}
-              <div className="Accomadations__details-balls">
+              <div className="Hotel__details-balls">
                 <DetailsBall
                   active={count === 0}
                   onClick={() => updateCount(0)}
@@ -186,7 +186,7 @@ export default function Accomadations() {
                 />
               </div>
             </div>
-            <div className="Accomadations__map">
+            <div className="Hotel__map">
               <Map
                 googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgeidwk_KkPjgFaUC880HzQ_j4TtAifQc&v=3.exp&libraries=geometry,drawing,places"
                 loadingElement={<div style={{ height: `100%` }} />}

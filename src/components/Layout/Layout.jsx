@@ -43,7 +43,7 @@ function DesktopHeader() {
           <ActiveLink to="/venue/">Venue</ActiveLink>
         </li>
         <li className="Layout__header-item">
-          <ActiveLink to="/accommodations/">Accommodations</ActiveLink>
+          <ActiveLink to="/hotel/">Hotel</ActiveLink>
         </li>
       </ul>
       <span className="Layout__header-name">Ryan & Alana</span>
