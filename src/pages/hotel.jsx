@@ -188,7 +188,7 @@ export default function Hotel() {
             </div>
             <div className="Hotel__map">
               <Map
-                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgeidwk_KkPjgFaUC880HzQ_j4TtAifQc&v=3.exp&libraries=geometry,drawing,places"
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_CLERKANIN_GMAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `100%` }} />}
                 mapElement={<div style={{ height: `100%` }} />}
