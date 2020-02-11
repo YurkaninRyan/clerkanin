@@ -83,9 +83,9 @@ const Map = withScriptjs(
   })
 )
 
-function DetailsBall(props) {
+function DetailsBall({ active, ...props }) {
   const cn = classnames("Venue__details-ball", {
-    "is-active": props.active,
+    "is-active": active,
   })
 
   return <div className={cn} {...props} />
