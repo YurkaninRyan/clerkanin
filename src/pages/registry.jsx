@@ -12,8 +12,6 @@ export default function Registry() {
       <LayoutConstrained>
         <SEO title="Registry" />
         <div className="Registry">
-          <h1>We need an ironing board</h1>
-          <h5>and a few other things :)</h5>
           <div className="Registry__card">
             <a
               rel="noopener noreferrer"
