@@ -46,6 +46,23 @@ function useInvitedAnalytics() {
             return false
           })
 
+          if (compare === 0) {
+            const aFirst = a.name.split(" ")[0]
+            const bFirst = b.name.split(" ")[0]
+
+            aFirst.split("").some((letter, index) => {
+              if (letter > bFirst[index]) {
+                compare = 1
+                return true
+              } else if (letter < bFirst[index]) {
+                compare = -1
+                return true
+              }
+
+              return false
+            })
+          }
+
           return compare
         })
 

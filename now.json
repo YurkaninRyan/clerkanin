@@ -1,7 +1,6 @@
 {
   "version": 2,
   "routes": [
-    { "handle": "filesystem" },
     {
       "src": "/static/(.*)",
       "dest": "/static/$1",
@@ -17,6 +16,7 @@
       "dest": "/$1",
       "headers": { "cache-control": "public, max-age=0, must-revalidate" }
     },
+    { "handle": "filesystem" },
     { "src": "/.*", "status": 404, "dest": "/404" }
   ]
 }

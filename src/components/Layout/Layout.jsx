@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import classnames from "classnames"
 import { Link } from "gatsby"
+import Div100vh from "react-div-100vh"
 
 import NavItems from "../NavItems/NavItems"
 
@@ -71,7 +72,7 @@ export default function Layout(props) {
   })
 
   return (
-    <div className="Layout">
+    <Div100vh className="Layout">
       <MobileHeader
         isActive={isNavOpen}
         onClick={() => setNavOpen(!isNavOpen)}
@@ -84,7 +85,7 @@ export default function Layout(props) {
 
         <div className="Layout__main-content">{props.children}</div>
       </main>
-    </div>
+    </Div100vh>
   )
 }
 

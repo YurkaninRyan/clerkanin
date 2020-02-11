@@ -1,6 +1,6 @@
 .RSVP {
   display: flex;
-  height: calc(100vh - 172px);
+  height: calc(100% - 172px);
   width: 100%;
 }
 
@@ -22,13 +22,15 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin: 0 auto 0 36px;
   max-width: 450px;
 
   .gatsby-image-wrapper {
     border: 1px solid var(--rose);
     box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.5);
+    position: sticky !important;
+    top: 36px;
   }
 
   img {
