@@ -1,6 +1,6 @@
 .vertical-timeline:before {
   background-color: var(--black);
-  height: calc(100% - 154px);
+  height: calc(100% - 283px);
   top: 50px;
   width: 2px;
 }
@@ -23,8 +23,31 @@
   border: 2px solid var(--black);
   // box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.5);
   box-shadow: none;
+
+  ul {
+    margin-bottom: 0px;
+
+    li {
+      font-size: 0.88405rem;
+      line-height: 1.1;
+      margin: 0 0 8px;
+    }
+  }
+
+  .vertical-timeline-element-date {
+    font-weight: bold;
+    padding-bottom: 0;
+  }
 }
 
 .vertical-timeline-element-content-arrow {
   display: none;
+}
+
+.vertical-timeline-element-title {
+  margin: 0 0 4px;
+}
+.vertical-timeline-element-subtitle {
+  margin: 0 0 16px;
+  opacity: 0.8;
 }

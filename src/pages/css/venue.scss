@@ -20,13 +20,14 @@
 }
 
 .Venue__details {
-  flex: 1 0 100%;
+  flex: 1 0 calc(100% - 32px);
   margin: 0 8px 16px;
   max-width: 550px;
   min-width: 0;
 
   .gatsby-image-wrapper {
     box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.5);
+    pointer-events: none;
   }
 }
 
