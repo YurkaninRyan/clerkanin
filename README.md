@@ -1,3 +1,6 @@
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/YurkaninRyan/clerkanin.svg)](https://greenkeeper.io/)
+
 <h1 align="center">
   Alana and Ryan's Wedding Website!
 </h1>
