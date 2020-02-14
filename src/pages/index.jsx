@@ -11,35 +11,34 @@ function Story() {
   return (
     <>
       <p>
-        We both ended up working at the same job but on different shifts. One
-        day we ended up working together and it was like we were long lost best
-        friends.
+        Luckily, one day, Alana had to cover a shift I was also working. We hit
+        it off immediately. Talking was effortless. Everything we talked about
+        was hilarious to us.
       </p>
 
       <p>
-        We bumped into each other a few times afterwards and Ryan worked up the
-        courage to ask Alana out. Our first date was in Philadelphia at a french
-        restaurant named Parc.
+        I finally worked up the courage to ask her out, but botched the
+        delivery. She still says to this day I didn't ask her out. We ended up
+        crossing paths again at a party, and I asked her out again. She said
+        yes. We went to Parc and walked around Rittenhouse
       </p>
 
       <p>
-        Time flew by and after two years we moved in together. We lived in
-        Fairmount for a year, then moved to Doylestown.{" "}
+        We dated through college, moved in together in Fairmount, moved out to
+        Doylestown, and came back. We've been on adventures together, and picked
+        up our fur child Pepe
       </p>
 
       <p>
-        During that time we went on adventures together and made each other
-        brave. We got Pepe and we've been a happy little family ever since.
+        At the end of 2018, I put together plan to marry her. I convinced her to
+        come with me to France and I worked to get her the perfect ring. On May
+        27th 2019, we arrived in Paris and I proposed on top of the beautiful
+        Pont Alexandre III. Alana said yes, and it was the best day of my life.
       </p>
 
       <p>
-        On May 27th 2019, we arrived in Paris and Ryan proposed on top of the
-        beautiful Pont Alexandre III. Alana said yes and the rest is history.
-      </p>
-
-      <p>
-        Now we're getting married in the city that we feel in love in, and we
-        can't wait to share it will all of you.
+        Now we're getting married in the city that we fell in love in, and we
+        can't wait to share it with you.
       </p>
     </>
   )
@@ -52,7 +51,7 @@ export default function Index() {
       <div className="Home">
         <ImageOfUsLong />
         <LayoutConstrained>
-          <h1>We met in college.</h1>
+          <h1>We were working the same job, different shifts.</h1>
           <Story />
         </LayoutConstrained>
       </div>
