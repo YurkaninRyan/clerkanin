@@ -114,7 +114,7 @@ export default function RSVP() {
         transaction.update(inviteeRef, updates)
         Email.send({
           From: "clerkanin.wedding.alerter@gmail.com",
-          To: "yurkaninryan@gmail.com",
+          To: "yurkaninryan@gmail.com,alana.clerkin@gmail.com",
           Subject: `${updates.name} has responded to our wedding invite!`,
           Body: `
           ${updates.name} has responded to our invite and ${
