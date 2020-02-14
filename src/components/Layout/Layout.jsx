@@ -54,7 +54,13 @@ function DesktopHeader() {
           <ActiveLink to="/schedule/">Schedule</ActiveLink>
         </li>
         <li className="Layout__header-item">
-          <ActiveLink to="/registry/">Registry</ActiveLink>
+          <a
+            rel="noopener noreferrer"
+            target="_registry"
+            href="https://www.target.com/gift-registry/giftgiver?registryId=68244336781d462fb92a2c4c2e0f1f1b&lnk=registry_custom_url"
+          >
+            Registry
+          </a>
         </li>
         <li className="Layout__header-item">
           <ActiveLink to="/rsvp/">RSVP</ActiveLink>
