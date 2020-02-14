@@ -1,41 +1,15 @@
 import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
-import classnames from "classnames"
-import {
-  GoogleMap,
-  Marker,
-  withScriptjs,
-  withGoogleMap,
-} from "react-google-maps"
+import { FaExternalLinkAlt } from "react-icons/fa"
 
 import Layout, { LayoutConstrained } from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import WyndhamImage from "../components/images/wyndham/WyndhamImage"
 import WyndhamImage2 from "../components/images/wyndham/WyndhamImage2"
 import WyndhamImage3 from "../components/images/wyndham/WyndhamImage3"
+import Carousel from "../components/Carousel/Carousel"
+import Map from "../components/Map/Map"
 
 import "./css/hotel.scss"
-
-function useInterval(callback, delay) {
-  const savedCallback = React.useRef()
-
-  // Remember the latest callback.
-  React.useEffect(() => {
-    savedCallback.current = callback
-  }, [callback])
-
-  // Set up the interval.
-  React.useEffect(() => {
-    function tick() {
-      savedCallback.current()
-    }
-    if (delay !== null) {
-      let id = setInterval(tick, delay)
-      return () => clearInterval(id)
-    }
-  }, [delay])
-}
 
 function Description() {
   return (
@@ -90,43 +64,7 @@ function Description() {
   )
 }
 
-const Map = withScriptjs(
-  withGoogleMap(function Map(props) {
-    return (
-      <GoogleMap
-        defaultZoom={13}
-        defaultCenter={{ lat: 39.9520921, lng: -75.1470951 }}
-      >
-        <Marker position={{ lat: 39.9520921, lng: -75.1470951 }}></Marker>
-      </GoogleMap>
-    )
-  })
-)
-
-function DetailsBall({ active, ...props }) {
-  const cn = classnames("Hotel__details-ball", {
-    "is-active": active,
-  })
-
-  return <div className={cn} {...props} />
-}
-
 export default function Hotel() {
-  const [count, setCount] = React.useState(0)
-  const [isRotating, setRotating] = React.useState(true)
-  useInterval(
-    () => {
-      const next = count + 1
-      setCount(next % 3)
-    },
-    isRotating ? 6000 : null
-  )
-
-  function updateCount(count) {
-    setRotating(false)
-    setCount(count)
-  }
-
   return (
     <Layout>
       <LayoutConstrained>
@@ -142,7 +80,7 @@ export default function Hotel() {
                 href="https://www.wyndhamhotels.com/wyndham/philadelphia-pennsylvania/wyndham-philadelphia-historic-district/overview?CID=LC:HR::GGL:RIO:National:47153&iata=00093796"
                 target="_blank"
               >
-                <FontAwesomeIcon icon={faExternalLinkAlt} />
+                <FaExternalLinkAlt />
               </a>
             </h1>
             <h6>400 Arch St, Philadelphia, PA 19106</h6>
@@ -167,33 +105,10 @@ export default function Hotel() {
           </div>
 
           <div className="Hotel__middle-content">
-            <div className="Hotel__details">
-              {count === 0 && <WyndhamImage />}
-              {count === 1 && <WyndhamImage2 />}
-              {count === 2 && <WyndhamImage3 />}
-              <div className="Hotel__details-balls">
-                <DetailsBall
-                  active={count === 0}
-                  onClick={() => updateCount(0)}
-                />
-                <DetailsBall
-                  active={count === 1}
-                  onClick={() => updateCount(1)}
-                />
-                <DetailsBall
-                  active={count === 2}
-                  onClick={() => updateCount(2)}
-                />
-              </div>
-            </div>
-            <div className="Hotel__map">
-              <Map
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.GATSBY_CLERKANIN_GMAPS_API_KEY}&v=3.exp&libraries=geometry,drawing,places`}
-                loadingElement={<div style={{ height: `100%` }} />}
-                containerElement={<div style={{ height: `100%` }} />}
-                mapElement={<div style={{ height: `100%` }} />}
-              />
-            </div>
+            <Carousel
+              slides={[<WyndhamImage />, <WyndhamImage2 />, <WyndhamImage3 />]}
+            />
+            <Map lat={39.9520921} lng={-75.1470951} />
           </div>
           <Description />
         </section>
