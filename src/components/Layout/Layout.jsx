@@ -1,6 +1,5 @@
 import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars } from "@fortawesome/free-solid-svg-icons"
+import { FaBars } from "react-icons/fa"
 import classnames from "classnames"
 import { Link } from "gatsby"
 import Div100vh from "react-div-100vh"
@@ -25,7 +24,7 @@ function MobileHeader(props) {
   return (
     <header className="Layout__header Layout__header--mobile">
       <button className={cnIcon} onClick={props.onClick}>
-        <FontAwesomeIcon icon={faBars} />
+        <FaBars />
       </button>
       <span className="Layout__header-name">Ryan & Alana</span>
     </header>
