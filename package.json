@@ -27,7 +27,7 @@
     "react-vertical-timeline-component": "^2.5.0"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.3"
   },
   "keywords": [
     "wedding"
