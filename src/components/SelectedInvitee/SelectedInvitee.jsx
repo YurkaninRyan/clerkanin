@@ -14,12 +14,14 @@ import "./SelectedInvitee.scss"
 export default function SelectedInvitee(props) {
   const [guest, setGuest] = React.useState(props.invitee.plusOneName || "")
   const [coming, setComing] = React.useState(props.invitee.coming)
+  const [email, setEmail] = React.useState(props.invitee.email)
   const [updated, setUpdated] = React.useState(false)
 
   const canBringGuestAndHasGivenOne =
     props.invitee.plusOne && coming === "yes" ? guest !== "" : true
 
   const canUpdate =
+    email &&
     canBringGuestAndHasGivenOne &&
     (guest !== props.invitee.plusOneName || coming !== props.invitee.coming)
 
@@ -27,7 +29,7 @@ export default function SelectedInvitee(props) {
     <Form
       onSubmit={() => {
         setUpdated(true)
-        props.onUpdate({ ...props.invitee, coming, plusOneName: guest })
+        props.onUpdate({ ...props.invitee, coming, email, plusOneName: guest })
       }}
     >
       <div className="SelectedInvitee__form-spacer">
@@ -51,6 +53,17 @@ export default function SelectedInvitee(props) {
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </Select>
+      </div>
+      <div className="SelectedInvitee__form-spacer">
+        <Label htmlFor="email">Your Email (for updates)</Label>
+        <Input
+          required
+          disabled={coming === "no"}
+          type="email"
+          id="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
       </div>
       {props.invitee.plusOne && (
         <div className="SelectedInvitee__form-spacer">

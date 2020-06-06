@@ -1,10 +1,25 @@
 .Home {
+  max-height: 735px;
+  overflow: hidden;
+  position: relative;
+
+  .Home__meta {
+    background: var(--white);
+    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.5);
+    left: 8px;
+    padding: 8px;
+    position: absolute;
+    top: 8px;
+  }
+
   .gatsby-image-wrapper {
     box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.5);
-    max-height: 50vh;
+    height: 100vh;
+    max-height: calc(100vh - 80px);
 
     img {
-      object-position: 0 20% !important;
+      margin: 0 !important;
+      object-position: 80% 0 !important;
     }
   }
 }

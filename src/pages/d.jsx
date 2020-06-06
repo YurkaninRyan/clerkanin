@@ -91,8 +91,8 @@ function CollapseList(props) {
         {props.children
           ? props.children
           : props.invitees.map(invitee => (
-              <li key={invitee.id}>{invitee.name}</li>
-            ))}
+            <li key={invitee.id}>{invitee.name}</li>
+          ))}
       </ul>
     </details>
   )
@@ -128,44 +128,49 @@ export default function RSVP() {
         {loading ? (
           "Fetching people..."
         ) : (
-          <>
-            <CollapseList heading="Invite List" invitees={analytics.all} />
-            <CollapseList heading="Who's Coming" invitees={analytics.coming} />
-            <CollapseList
-              heading="Who hasn't RSVPd"
-              invitees={analytics.notComing}
-            />
-            <CollapseList heading="Plus Ones" invitees={analytics.plusOnes}>
-              {analytics.plusOnes.map(invitee => (
-                <li key={invitee.id}>
-                  <b>{invitee.name}</b> is bringing{" "}
-                  <b>
-                    {invitee.plusOneName
-                      ? invitee.plusOneName
-                      : "an unknown person"}
-                  </b>
-                </li>
-              ))}
-            </CollapseList>
-            <hr />
-            <Form onSubmit={handleUpdates}>
-              <div>
-                <Label>Invitee Name:</Label>
-                <Input value={name} onChange={e => setName(e.target.value)} />
-              </div>
-              <div>
-                <Label>Plus One?</Label>
-                <Input
-                  type="checkbox"
-                  checked={plusOne}
-                  onChange={e => setPlusOne(e.target.checked)}
-                />
-              </div>
-              <br />
-              <Button type="submit">add new invitee</Button>
-            </Form>
-          </>
-        )}
+            <>
+              <CollapseList heading="Invite List" invitees={analytics.all} />
+              <CollapseList heading="Who's Coming (names)" invitees={analytics.coming} />
+              <CollapseList heading="Who's Coming (email list)" invitees={analytics.coming}>
+                {analytics.coming.filter(i => i).map(invitee =>
+                  invitee.email
+                ).join(",")}
+              </CollapseList>
+              <CollapseList
+                heading="Who hasn't RSVPd"
+                invitees={analytics.notComing}
+              />
+              <CollapseList heading="Plus Ones" invitees={analytics.plusOnes}>
+                {analytics.plusOnes.map(invitee => (
+                  <li key={invitee.id}>
+                    <b>{invitee.name}</b> is bringing{" "}
+                    <b>
+                      {invitee.plusOneName
+                        ? invitee.plusOneName
+                        : "an unknown person"}
+                    </b>
+                  </li>
+                ))}
+              </CollapseList>
+              <hr />
+              <Form onSubmit={handleUpdates}>
+                <div>
+                  <Label>Invitee Name:</Label>
+                  <Input value={name} onChange={e => setName(e.target.value)} />
+                </div>
+                <div>
+                  <Label>Plus One?</Label>
+                  <Input
+                    type="checkbox"
+                    checked={plusOne}
+                    onChange={e => setPlusOne(e.target.checked)}
+                  />
+                </div>
+                <br />
+                <Button type="submit">add new invitee</Button>
+              </Form>
+            </>
+          )}
       </LayoutConstrained>
     </Layout>
   )

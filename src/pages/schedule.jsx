@@ -20,7 +20,7 @@ export default function Schedule() {
         <h1>September 26th, 2020</h1>
         <VerticalTimeline animate={false}>
           <VerticalTimelineElement
-            date="4:30pm - 5:00pm"
+            date="4:00pm - 4:30pm"
             icon={<FaRing />}
             iconStyle={{ backgroundColor: "var(--linen)" }}
           >
@@ -36,7 +36,7 @@ export default function Schedule() {
             </ul>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            date="5:00pm - 6:00pm"
+            date="4:30pm - 5:00pm"
             icon={<FaCocktail />}
             iconStyle={{ backgroundColor: "var(--linen)" }}
           >
@@ -48,7 +48,7 @@ export default function Schedule() {
             </ul>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            date="6:00pm - 7:00pm"
+            date="5:00pm - 6:00pm"
             icon={<FaUtensils />}
             iconStyle={{ backgroundColor: "var(--linen)" }}
           >
@@ -59,7 +59,7 @@ export default function Schedule() {
             </ul>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            date="7:00pm - 8:00pm"
+            date="6:00pm - 7:00pm"
             icon={<GiPublicSpeaker />}
             iconStyle={{ backgroundColor: "var(--linen)" }}
           >
@@ -74,7 +74,7 @@ export default function Schedule() {
             </ul>
           </VerticalTimelineElement>
           <VerticalTimelineElement
-            date="8:00pm - 11:00pm"
+            date="7:00pm - 10:30pm"
             icon={<GiMusicalNotes />}
             iconStyle={{ backgroundColor: "var(--linen)" }}
           >

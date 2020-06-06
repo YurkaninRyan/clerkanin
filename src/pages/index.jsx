@@ -1,8 +1,7 @@
 import React from "react"
+import Countdown from "react-countdown"
 
-// import proposal from "../videos/proposal.mp4"
-
-import Layout, { LayoutConstrained } from "../components/Layout/Layout"
+import Layout from "../components/Layout/Layout"
 import SEO from "../components/seo"
 import ImageOfUsLong from "../components/images/us/ImageOfUsLong/ImageOfUsLong"
 import "./css/index.scss"
@@ -13,7 +12,13 @@ export default function Index() {
       <SEO title="Home" />
       <div className="Home">
         <ImageOfUsLong />
-        <LayoutConstrained></LayoutConstrained>
+        <div className="Home__meta">
+          <b>September 26th, 2020</b>
+          <br />
+          <Countdown date={new Date("2020-09-26 16:00")} renderer={({ days }) => {
+            return `${days} day${days === 1 ? "" : "s"} left until the wedding!`
+          }} />
+        </div>
       </div>
     </Layout>
   )

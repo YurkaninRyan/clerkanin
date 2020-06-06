@@ -11,49 +11,6 @@ import "./css/rsvp.scss"
 
 import { getFirebase } from "../firebase"
 
-/* SmtpJS.com - v3.0.0 */
-/* eslint-disable */
-var Email = {
-  send: function(a) {
-    return new Promise(function(n, e) {
-      ;(a.nocache = Math.floor(1e6 * Math.random() + 1)), (a.Action = "Send")
-      var t = JSON.stringify(a)
-      Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function(e) {
-        n(e)
-      })
-    })
-  },
-  ajaxPost: function(e, n, t) {
-    var a = Email.createCORSRequest("POST", e)
-    a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"),
-      (a.onload = function() {
-        var e = a.responseText
-        null != t && t(e)
-      }),
-      a.send(n)
-  },
-  ajax: function(e, n) {
-    var t = Email.createCORSRequest("GET", e)
-    ;(t.onload = function() {
-      var e = t.responseText
-      null != n && n(e)
-    }),
-      t.send()
-  },
-  createCORSRequest: function(e, n) {
-    var t = new XMLHttpRequest()
-    return (
-      "withCredentials" in t
-        ? t.open(e, n, !0)
-        : "undefined" != typeof XDomainRequest
-        ? (t = new XDomainRequest()).open(e, n)
-        : (t = null),
-      t
-    )
-  },
-}
-/* eslint-disable */
-
 function Searchbar(props) {
   return (
     <Form
@@ -110,29 +67,9 @@ export default function RSVP() {
     const inviteeRef = await db.collection("invited").doc(updates.id)
 
     db.runTransaction(transaction => {
-      return transaction.get(inviteeRef).then(invitee => {
+      return transaction.get(inviteeRef).then(invitee =>
         transaction.update(inviteeRef, updates)
-        Email.send({
-          From: "clerkanin.wedding.alerter@gmail.com",
-          To: "yurkaninryan@gmail.com,alana.clerkin@gmail.com",
-          Subject: `${updates.name} has responded to our wedding invite!`,
-          Body: `
-          ${updates.name} has responded to our invite and ${
-            updates.coming === "yes" ? "is coming!" : "is not coming!"
-          }
-          ${
-            updates.plusOneName
-              ? "They are also bringing " +
-                updates.plusOneName +
-                " as their guest."
-              : ""
-          }
-        `,
-          Host: "smtp.gmail.com",
-          Username: process.env.GATSBY_CLERKANIN_GMAIL_USERNAME,
-          Password: process.env.GATSBY_CLERKANIN_GMAIL_PASSWORD,
-        })
-      })
+      );
     })
   }
 
