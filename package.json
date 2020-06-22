@@ -11,12 +11,12 @@
     "gatsby-plugin-manifest": "^2.4.3",
     "gatsby-plugin-offline": "^3.2.2",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
-    "node-sass": "^4.14.1",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sass": "^2.3.1",
     "gatsby-plugin-sharp": "^2.6.3",
     "gatsby-source-filesystem": "^2.3.3",
     "gatsby-transformer-sharp": "^2.5.2",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-countdown": "^2.2.1",
@@ -25,7 +25,8 @@
     "react-google-maps": "^9.4.5",
     "react-helmet": "^6.0.0",
     "react-icons": "^3.10.0",
-    "react-vertical-timeline-component": "^3.0.0"
+    "react-vertical-timeline-component": "^3.0.0",
+    "snyk": "^1.347.1"
   },
   "devDependencies": {
     "prettier": "^2.0.0"
@@ -40,6 +41,9 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  }
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "snyk": true
 }
