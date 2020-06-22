@@ -21,10 +21,13 @@ export default function NavItems() {
         <ActiveLink to="/venue/">Venue</ActiveLink>
       </li>
       <li className="NavItems__item">
-        <ActiveLink to="/schedule/">Schedule</ActiveLink>
+        <ActiveLink to="/parking/">Parking</ActiveLink>
       </li>
       <li className="NavItems__item">
         <ActiveLink to="/hotel/">Hotel</ActiveLink>
+      </li>
+      <li className="NavItems__item">
+        <ActiveLink to="/schedule/">Schedule</ActiveLink>
       </li>
       <li className="NavItems__item">
         <a
@@ -37,6 +40,9 @@ export default function NavItems() {
       </li>
       <li className="NavItems__item">
         <ActiveLink to="/rsvp/">RSVP</ActiveLink>
+      </li>
+      <li className="NavItems__item">
+        <ActiveLink to="/covid/">COVID</ActiveLink>
       </li>
     </ul>
   )
