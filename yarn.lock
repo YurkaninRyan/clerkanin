@@ -13578,10 +13578,10 @@ react-style-singleton@^2.1.0:
     invariant "^2.2.4"
     tslib "^1.0.0"
 
-react-vertical-timeline-component@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-vertical-timeline-component/-/react-vertical-timeline-component-3.0.0.tgz#0def9a0abc615a5a25deedfe977e3599ab4853f2"
-  integrity sha512-fWZPA5huBEY/4oKp1NZtpHwcx7TsTD5tTcieTZkOlW54GoLknrcxYWxWskdCCZRPzmDgRxfOlrseEoEkeD3hMg==
+react-vertical-timeline-component@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-vertical-timeline-component/-/react-vertical-timeline-component-3.0.2.tgz#e1c39139b0732c896f6b52b92a3db634784dd5aa"
+  integrity sha512-k56en5bb1WRHjr1B8mXRmnGpiHIWvf4lgL26T0yQJEkHVhj3G5lKGXmJrpdRftLSrvYsDmY428obERAG7hmtjA==
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.7.2"
