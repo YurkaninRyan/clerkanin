@@ -9,9 +9,7 @@
       "GATSBY_CLERKANIN_FIREBASE_PROJECT_ID": "@gatsby_clerkanin_firebase_project_id",
       "GATSBY_CLERKANIN_FIREBASE_STORAGE_BUCKET": "@gatsby_clerkanin_firebase_storage_bucket",
       "GATSBY_CLERKANIN_FIREBASE_MESSAGING_SENDER_ID": "@gatsby_clerkanin_firebase_messaging_sender_id",
-      "GATSBY_CLERKANIN_GMAPS_API_KEY": "@gatsby_clerkanin_gmaps_api_key",
-      "GATSBY_CLERKANIN_GMAIL_USERNAME": "@gatsby_clerkanin_gmail_username",
-      "GATSBY_CLERKANIN_GMAIL_PASSWORD": "@gatsby_clerkanin_gmail_password"
+      "GATSBY_CLERKANIN_GMAPS_API_KEY": "@gatsby_clerkanin_gmaps_api_key"
     }
   },
   "routes": [
