@@ -43,9 +43,6 @@ function DesktopHeader() {
           <ActiveLink to="/venue/">Venue</ActiveLink>
         </li>
         <li className="Layout__header-item">
-          <ActiveLink to="/parking/">Parking</ActiveLink>
-        </li>
-        <li className="Layout__header-item">
           <ActiveLink to="/hotel/">Hotel</ActiveLink>
         </li>
       </ul>
@@ -66,9 +63,6 @@ function DesktopHeader() {
         </li>
         <li className="Layout__header-item">
           <ActiveLink to="/rsvp/">RSVP</ActiveLink>
-        </li>
-        <li className="Layout__header-item">
-          <ActiveLink to="/covid/">COVID</ActiveLink>
         </li>
       </ul>
     </header>

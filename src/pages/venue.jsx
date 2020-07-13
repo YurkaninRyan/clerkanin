@@ -7,6 +7,7 @@ import MaasImage from "../components/images/maas/MaasImage"
 import MaasImage2 from "../components/images/maas/MaasImage2"
 import MaasImage3 from "../components/images/maas/MaasImage3"
 import Carousel from "../components/Carousel/Carousel"
+import Banner from "../components/Banner/Banner";
 import Map from "../components/Map/Map"
 
 import "./css/venue.scss"
@@ -64,16 +65,22 @@ export default function Venue() {
               </a>
             </h1>
             <h6>1325 N Randolph St, Philadelphia, PA 19122</h6>
-            <h6>
-              <a
-                rel="noopener noreferrer"
-                href="https://www.google.com/maps/dir//Maas+Building,+1325+N+Randolph+St,+Philadelphia,+PA+19122/@40.1273579,-75.346435,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c6c8722a2cde35:0x4c1ba74ba873a077!2m2!1d-75.1452789!2d39.9720698!3e3"
-                target="_blank"
-              >
-                Directions to the venue
-              </a>
-            </h6>
+              <h6>
+                <a
+                  rel="noopener noreferrer"
+                  href="https://www.google.com/maps/dir//Maas+Building,+1325+N+Randolph+St,+Philadelphia,+PA+19122/@40.1273579,-75.346435,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c6c8722a2cde35:0x4c1ba74ba873a077!2m2!1d-75.1452789!2d39.9720698!3e3"
+                  target="_blank"
+                >
+                  Directions to the venue
+                </a>
+              </h6>
           </div>
+
+          <Banner>
+            Parking is in the lot directly across from the 1325 N Randolph St entrance, and is <b>not</b> overnight parking.
+          </Banner>
+
+          <br/>
 
           <div className="Venue__middle-content">
             <Carousel

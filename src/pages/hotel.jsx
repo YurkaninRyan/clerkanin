@@ -7,6 +7,7 @@ import WyndhamImage from "../components/images/wyndham/WyndhamImage"
 import WyndhamImage2 from "../components/images/wyndham/WyndhamImage2"
 import WyndhamImage3 from "../components/images/wyndham/WyndhamImage3"
 import Carousel from "../components/Carousel/Carousel"
+import Banner from "../components/Banner/Banner"
 import Map from "../components/Map/Map"
 
 import "./css/hotel.scss"
@@ -103,6 +104,12 @@ export default function Hotel() {
               </a>
             </h6>
           </div>
+
+          <Banner>
+            For guests staying at the Wyndham, the <bold>only</bold> shuttle from the hotel will leave promptly at 3pm!  If you're not there you'll have to find alternative means of transportation.
+          </Banner>
+
+          <br />
 
           <div className="Hotel__middle-content">
             <Carousel
