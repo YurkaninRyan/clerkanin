@@ -16,7 +16,7 @@ export default function Index() {
           <b>September 26th, 2020</b>
           <br />
           <Countdown date={new Date("2020-09-26 16:00")} renderer={({ days }) => {
-            return `${days} day${days === 1 ? "" : "s"} left until the wedding!`
+            return <span><time>{days} day{days === 1 ? "" : "s"}</time> left until the wedding!</span>
           }} />
         </div>
       </div>

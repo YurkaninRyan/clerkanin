@@ -2,8 +2,6 @@ import React from "react"
 import Layout, { LayoutConstrained } from "../components/Layout/Layout"
 import SEO from "../components/seo"
 
-import { Form, Button, Input, Label } from "../components/Form/Form"
-
 import "./css/d.scss"
 
 import { getFirebase } from "../firebase"
@@ -71,6 +69,8 @@ function useInvitedAnalytics() {
         coming: all.filter(invitee => invitee.coming === "yes"),
         notComing: all.filter(invitee => invitee.coming === "no"),
         plusOnes: all.filter(invitee => invitee.plusOne),
+        virtual: all.filter(invitee => invitee.virtual),
+        notVirtual: all.filter(invitee => !invitee.virtual)
       })
     })
   }, [])
@@ -140,6 +140,14 @@ export default function RSVP() {
                 heading="Who hasn't RSVPd"
                 invitees={analytics.notComing}
               />
+              <CollapseList
+                heading="Who is virtual"
+                invitees={analytics.virtual}
+              />
+              <CollapseList
+                heading="Who is not virtual"
+                invitees={analytics.notVirtual}
+              />
               <CollapseList heading="Plus Ones" invitees={analytics.plusOnes}>
                 {analytics.plusOnes.map(invitee => (
                   <li key={invitee.id}>
@@ -152,23 +160,6 @@ export default function RSVP() {
                   </li>
                 ))}
               </CollapseList>
-              <hr />
-              <Form onSubmit={handleUpdates}>
-                <div>
-                  <Label>Invitee Name:</Label>
-                  <Input value={name} onChange={e => setName(e.target.value)} />
-                </div>
-                <div>
-                  <Label>Plus One?</Label>
-                  <Input
-                    type="checkbox"
-                    checked={plusOne}
-                    onChange={e => setPlusOne(e.target.checked)}
-                  />
-                </div>
-                <br />
-                <Button type="submit">add new invitee</Button>
-              </Form>
             </>
           )}
       </LayoutConstrained>

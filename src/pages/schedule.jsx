@@ -39,10 +39,7 @@ export default function Schedule() {
             <h6 className="vertical-timeline-element-subtitle">Get ready to cry!</h6>
             <ul>
               <li>Officiated by Pastor Michelle Kaufman</li>
-              <li>
-                There's no elevator in the building so you have to take the
-                stairs
-              </li>
+              <li>Please wear your mask during ceremony, temperatures will be checked at the door</li>
               <li>Alana and Ryan will both be keeping their names</li>
             </ul>
           </VerticalTimelineElement>

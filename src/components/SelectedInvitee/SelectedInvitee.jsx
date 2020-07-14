@@ -9,6 +9,8 @@ import {
   SecondaryButton,
 } from "../Form/Form"
 
+import Banner from "../Banner/Banner";
+
 import "./SelectedInvitee.scss"
 
 export default function SelectedInvitee(props) {
@@ -32,6 +34,13 @@ export default function SelectedInvitee(props) {
         props.onUpdate({ ...props.invitee, coming, email, plusOneName: guest })
       }}
     >
+      <Banner>
+        {props.invitee.virtual ?
+          "We will be sending out links for the virtual wedding, please check your email the day of the wedding." :
+          "If you don't feel comfortable coming due to COVID-19 please email alana.clerkin@gmail.com, and we'll get you the virtual link the day of the wedding"
+        }
+      </Banner>
+      <br />
       <div className="SelectedInvitee__form-spacer">
         <Label htmlFor="name">Name</Label>
         <div id="name">{props.invitee.name}</div>

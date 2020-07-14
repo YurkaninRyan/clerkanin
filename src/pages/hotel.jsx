@@ -106,7 +106,7 @@ export default function Hotel() {
           </div>
 
           <Banner>
-            For guests staying at the Wyndham, the <bold>only</bold> shuttle from the hotel will leave promptly at 3pm!  If you're not there you'll have to find alternative means of transportation.
+            For guests staying at the Wyndham, the <bold>only</bold> shuttle from the hotel will leave promptly at 3:30pm!  If you're not there you'll have to find alternative means of transportation.
           </Banner>
 
           <br />

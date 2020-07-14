@@ -10,6 +10,8 @@ import Carousel from "../components/Carousel/Carousel"
 import Banner from "../components/Banner/Banner";
 import Map from "../components/Map/Map"
 
+import parking from "../images/parking.jpg";
+
 import "./css/venue.scss"
 
 function Description() {
@@ -77,7 +79,8 @@ export default function Venue() {
           </div>
 
           <Banner>
-            Parking is in the lot directly across from the 1325 N Randolph St entrance, and is <b>not</b> overnight parking.
+            Parking is in the lot directly across from the 1325 N Randolph St entrance, and is <b>not</b> overnight parking. <br />
+            The entrance is on the other side, it's a little confusing so we made <a href={parking}>this handy diagram to help you!</a>
           </Banner>
 
           <br/>

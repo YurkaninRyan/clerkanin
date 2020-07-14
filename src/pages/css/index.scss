@@ -2,13 +2,33 @@
   overflow: hidden;
   position: relative;
 
-  .Home__meta {
-    background: var(--white);
-    box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 0.5);
-    left: 8px;
-    padding: 8px;
+  &:after {
     position: absolute;
-    top: 8px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    content: "";
+  }
+
+  .Home__meta {
+    font-family: "Amatic SC", cursive;
+    position: absolute;
+    top: calc(50% - 150px);
+    right: 50%;
+    transform: translateX(50%) translateY(50%);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    width: 100%;
+    max-width: 80vw;
+    z-index: 1;
+
+    time {
+      border-bottom: 2px solid var(--white);
+    }
   }
 
   .gatsby-image-wrapper {
