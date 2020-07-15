@@ -345,7 +345,7 @@ textarea {
 html {
   box-sizing: border-box;
   font: 112.5%/1.45em georgia, serif;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 * {
   box-sizing: inherit;
