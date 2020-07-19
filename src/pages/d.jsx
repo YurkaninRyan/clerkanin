@@ -68,6 +68,7 @@ function useInvitedAnalytics() {
         all,
         coming: all.filter(invitee => invitee.coming === "yes"),
         notComing: all.filter(invitee => invitee.coming === "no"),
+        hasntRSVPd: all.filter(invitee => invitee.coming === ""),
         plusOnes: all.filter(invitee => invitee.plusOne),
         virtual: all.filter(invitee => invitee.virtual),
         notVirtual: all.filter(invitee => !invitee.virtual)
@@ -104,22 +105,7 @@ CollapseList.defaultProps = {
 
 export default function RSVP() {
   const { analytics, loading } = useInvitedAnalytics()
-  const [name, setName] = React.useState("")
-  const [plusOne, setPlusOne] = React.useState(false)
-
-  async function handleUpdates() {
-    const firebase = await getFirebase()
-    const db = firebase.firestore()
-    db.collection("invited").add({
-      name,
-      coming: "no",
-      plusOne,
-      plusOneName: "",
-    })
-
-    setName("")
-    setPlusOne(false)
-  }
+  const getUniqueEmails = (invitees) => [...new Set(invitees.filter(i => i).map(invitee => invitee.email))]
 
   return (
     <Layout>
@@ -130,15 +116,17 @@ export default function RSVP() {
         ) : (
             <>
               <CollapseList heading="Invite List" invitees={analytics.all} />
-              <CollapseList heading="Who's Coming (names)" invitees={analytics.coming} />
-              <CollapseList heading="Who's Coming (email list)" invitees={analytics.coming}>
-                {analytics.coming.filter(i => i).map(invitee =>
-                  invitee.email
-                ).join(",")}
+              <CollapseList heading="Who is coming (names)" invitees={analytics.coming} />
+              <CollapseList heading="Who is coming (email list)" invitees={analytics.coming}>
+                {getUniqueEmails(analytics.coming).join(",")}
               </CollapseList>
               <CollapseList
-                heading="Who hasn't RSVPd"
+                heading="Who isn't coming"
                 invitees={analytics.notComing}
+              />
+              <CollapseList
+                heading="Who hasn't RSVPd"
+                invitees={analytics.hasntRSVPd}
               />
               <CollapseList
                 heading="Who is virtual"

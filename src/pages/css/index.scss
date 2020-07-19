@@ -1,6 +1,7 @@
 .Home {
   overflow: hidden;
   position: relative;
+  height: calc(100vh - 98px);
 
   &:after {
     position: absolute;

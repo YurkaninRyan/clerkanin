@@ -7,6 +7,8 @@ import SelectedInvitee from "../components/SelectedInvitee/SelectedInvitee"
 import { Form, Label, Button, Input } from "../components/Form/Form"
 import ImageOfUsSmilingTogether from "../components/images/us/ImageOfUsSmilingTogether/ImageOfUsSmilingTogether"
 
+import Banner from "../components/Banner/Banner";
+
 import "./css/rsvp.scss"
 
 import { getFirebase } from "../firebase"
@@ -20,12 +22,19 @@ function Searchbar(props) {
         props.onSubmit()
       }}
     >
-      <Label htmlFor="search">Search By Name</Label>
+      <Label htmlFor="name-search">Search by name</Label>
       <Input
+        list="name-search-options"
+        id="name-search"
         value={props.value}
         placeholder="e.g. Michael Scott"
         onChange={props.onChange}
       />
+      <datalist id="name-search-options">
+        {props.options.map(option => {
+           return (<option value={option} key={option} />)
+        })}
+      </datalist>
       <Button type="submit">Search</Button>
     </Form>
   )
@@ -79,9 +88,11 @@ export default function RSVP() {
       <LayoutConstrained>
         <div className="RSVP">
           <div className="RSVP__form">
+            <Banner>If you were invited as a pair, please RSVP individually</Banner> <br />
             {!selected && (
               <Searchbar
                 value={search}
+                options={invited?.map((invitee) => invitee.name) ?? []}
                 onChange={e => setSearch(e.target.value)}
                 onSubmit={searchInvited}
               />
