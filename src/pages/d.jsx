@@ -106,6 +106,8 @@ CollapseList.defaultProps = {
 export default function RSVP() {
   const { analytics, loading } = useInvitedAnalytics()
   const getUniqueEmails = (invitees) => [...new Set(invitees.filter(i => i).map(invitee => invitee.email))]
+  const getInPerson = (invitees) => invitees.filter(i => !i.virtual);
+  const getVirtual = (invitees) => invitees.filter(i => i.virtual)
 
   return (
     <Layout>
@@ -115,19 +117,27 @@ export default function RSVP() {
           "Fetching people..."
         ) : (
             <>
-              <CollapseList heading="Invite List" invitees={analytics.all} />
-              <CollapseList heading="Who is coming (names)" invitees={analytics.coming} />
-              <CollapseList heading="Who is coming (email list)" invitees={analytics.coming}>
+              <CollapseList heading="[In Person] Who is coming (names)" invitees={getInPerson(analytics.coming)} />
+              <CollapseList heading="[In Person] Who is coming (email list)" invitees={getInPerson(analytics.coming)}>
                 {getUniqueEmails(analytics.coming).join(",")}
               </CollapseList>
               <CollapseList
-                heading="Who isn't coming"
-                invitees={analytics.notComing}
+                heading="[In Person] Who isn't coming"
+                invitees={getInPerson(analytics.notComing)}
+              />
+              <CollapseList heading="[Virtual] Who is coming (names)" invitees={getVirtual(analytics.coming)} />
+              <CollapseList heading="[Virtual] Who is coming (email list)" invitees={getVirtual(analytics.coming)}>
+                {getUniqueEmails(analytics.coming).join(",")}
+              </CollapseList>
+              <CollapseList
+                heading="[Virtual] Who isn't coming"
+                invitees={getVirtual(analytics.notComing)}
               />
               <CollapseList
                 heading="Who hasn't RSVPd"
                 invitees={analytics.hasntRSVPd}
               />
+              <CollapseList heading="Invite List" invitees={analytics.all} />
               <CollapseList
                 heading="Who is virtual"
                 invitees={analytics.virtual}
@@ -136,18 +146,6 @@ export default function RSVP() {
                 heading="Who is not virtual"
                 invitees={analytics.notVirtual}
               />
-              <CollapseList heading="Plus Ones" invitees={analytics.plusOnes}>
-                {analytics.plusOnes.map(invitee => (
-                  <li key={invitee.id}>
-                    <b>{invitee.name}</b> is bringing{" "}
-                    <b>
-                      {invitee.plusOneName
-                        ? invitee.plusOneName
-                        : "an unknown person"}
-                    </b>
-                  </li>
-                ))}
-              </CollapseList>
             </>
           )}
       </LayoutConstrained>
