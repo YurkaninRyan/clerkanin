@@ -59,6 +59,7 @@ export default function SelectedInvitee(props) {
             }
           }}
         >
+          <option value=""></option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </Select>
