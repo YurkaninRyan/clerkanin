@@ -127,7 +127,7 @@ export default function RSVP() {
               />
               <CollapseList heading="[Virtual] Who is coming (names)" invitees={getVirtual(analytics.coming)} />
               <CollapseList heading="[Virtual] Who is coming (email list)" invitees={getVirtual(analytics.coming)}>
-                {getUniqueEmails(analytics.coming).join(",")}
+                {getUniqueEmails(getVirtual(analytics.coming)).join(",")}
               </CollapseList>
               <CollapseList
                 heading="[Virtual] Who isn't coming"

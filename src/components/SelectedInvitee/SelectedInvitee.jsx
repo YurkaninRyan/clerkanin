@@ -16,14 +16,14 @@ import "./SelectedInvitee.scss"
 export default function SelectedInvitee(props) {
   const [guest, setGuest] = React.useState(props.invitee.plusOneName || "")
   const [coming, setComing] = React.useState(props.invitee.coming)
-  const [email, setEmail] = React.useState(props.invitee.email)
+  const [email, setEmail] = React.useState(props.invitee.email || "")
   const [updated, setUpdated] = React.useState(false)
 
   const canBringGuestAndHasGivenOne =
     props.invitee.plusOne && coming === "yes" ? guest !== "" : true
 
+
   const canUpdate =
-    email &&
     canBringGuestAndHasGivenOne &&
     (guest !== props.invitee.plusOneName || coming !== props.invitee.coming)
 
@@ -67,8 +67,6 @@ export default function SelectedInvitee(props) {
       <div className="SelectedInvitee__form-spacer">
         <Label htmlFor="email">Your Email (for updates)</Label>
         <Input
-          required
-          disabled={coming === "no"}
           type="email"
           id="email"
           value={email}
