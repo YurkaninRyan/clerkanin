@@ -32,7 +32,7 @@ function Searchbar(props) {
       />
       <datalist id="name-search-options">
         {props.options.map(option => {
-           return (<option value={option} key={option} />)
+           return (<option value={option} key={option}>{option}</option>)
         })}
       </datalist>
       <Button type="submit">Search</Button>

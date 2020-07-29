@@ -47,7 +47,7 @@ export default function SelectedInvitee(props) {
       </div>
 
       <div className="SelectedInvitee__form-spacer">
-        <Label htmlFor="coming">Can you come?</Label>
+        <Label htmlFor="coming">{props.invitee.virtual ? "Would you like a virtual link" : "Can you come?"}</Label>
         <Select
           required
           id="coming"
@@ -59,7 +59,7 @@ export default function SelectedInvitee(props) {
             }
           }}
         >
-          <option value=""></option>
+          <option value="">--</option>
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </Select>
