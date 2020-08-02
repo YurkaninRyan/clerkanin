@@ -50,10 +50,10 @@ export default function RSVP() {
   React.useEffect(() => {
     getFirebase().then(async firebase => {
       const db = firebase.firestore()
-      const invited = await db.collection("invited").get()
+      const invitees = await db.collection("invited").get()
 
       setInvited(
-        invited.docs.map(invitee => {
+        invitees.docs.map(invitee => {
           return { id: invitee.id, ...invitee.data() }
         })
       )
