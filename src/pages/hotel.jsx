@@ -3,9 +3,9 @@ import { FaExternalLinkAlt } from "react-icons/fa"
 
 import Layout, { LayoutConstrained } from "../components/Layout/Layout"
 import SEO from "../components/seo"
-import WyndhamImage from "../components/images/wyndham/WyndhamImage"
-import WyndhamImage2 from "../components/images/wyndham/WyndhamImage2"
-import WyndhamImage3 from "../components/images/wyndham/WyndhamImage3"
+import HotelImage1 from "../components/images/hotel/HotelImage1"
+import HotelImage2 from "../components/images/hotel/HotelImage2"
+import HotelImage3 from "../components/images/hotel/HotelImage3"
 import Carousel from "../components/Carousel/Carousel"
 import Banner from "../components/Banner/Banner"
 import Map from "../components/Map/Map"
@@ -74,21 +74,22 @@ export default function Hotel() {
         <section className="Hotel">
           <div className="Hotel__heading">
             <h1>
-              Wyndham Philadelphia Historic District{" "}
+              Philadelphia Marriott Old City{" "}
               <a
                 rel="noopener noreferrer"
                 className="Hotel__external-icon"
-                href="https://www.wyndhamhotels.com/wyndham/philadelphia-pennsylvania/wyndham-philadelphia-historic-district/overview?CID=LC:HR::GGL:RIO:National:47153&iata=00093796"
+                href="https://www.marriott.com/hotels/travel/phlmo-philadelphia-marriott-old-city/?scid=bb1a189a-fec3-4d19-a255-54ba596febe2"
                 target="_blank"
               >
                 <FaExternalLinkAlt />
               </a>
             </h1>
-            <h6>400 Arch St, Philadelphia, PA 19106</h6>
+            <h6>One Dock Street, Philadelphia, Pennsylvania 19106 USA</h6>
+            <h6>215-238-6000</h6>
             <h6>
               <a
                 rel="noopener noreferrer"
-                href="https://www.google.com/maps/dir//wyndham+old+city+hotel/@39.9520921,-75.1470951,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c6c88421a9f379:0xce18bea485fd9b80!2m2!1d-75.1469444!2d39.9522222"
+                href="https://https://www.google.com/maps/https://www.google.com/maps/place/Philadelphia+Marriott+Old+City/@39.945598,-75.143375,18z/data=!4m8!3m7!1s0x89c6c89ab7451585:0x37bf386f4bc47164!5m2!4m1!1i2!8m2!3d39.9456717!4d-75.1431651?hl=en-US//Philadelphia+Marriott+Old+City,+One+Dock+St,+Philadelphia,+PA+19106/@39.945755,-75.143754,18z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c6c89ab7451585:0x37bf386f4bc47164!2m2!1d-75.1431652!2d39.9456718?hl=en-US.google.com/maps/dir//Philadelphia+Marriott+Old+City,+One+Dock+St,+Philadelphia,+PA+19106/@39.9471194,-75.1451675,17.9z/data=!4m8!4m7!1m0!1m5!1m1!1s0x89c6c89ab7451585:0x37bf386f4bc47164!2m2!1d-75.1431652!2d39.9456718"
                 target="_blank"
               >
                 Directions to the hotel
@@ -97,25 +98,25 @@ export default function Hotel() {
             <h6>
               <a
                 rel="noopener noreferrer"
-                href="https://book.passkey.com/e/50026297"
+                href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1597434499626&key=GRP&app=resvlink"
                 target="_blank"
               >
-                Book your room in our wedding block
+                Book your room in our wedding block by September 4th!
               </a>
             </h6>
           </div>
 
           <Banner>
-            For guests staying at the Wyndham, the <bold>only</bold> shuttle from the hotel will leave promptly at 3:30pm!  If you're not there you'll have to find alternative means of transportation.
+            For guests staying at the hotel, the <bold>only</bold> shuttle from the hotel will leave promptly at 3:30pm!  If you're not there you'll have to find alternative means of transportation.
           </Banner>
 
           <br />
 
           <div className="Hotel__middle-content">
             <Carousel
-              slides={[<WyndhamImage />, <WyndhamImage2 />, <WyndhamImage3 />]}
+              slides={[<HotelImage1 />, <HotelImage2 />, <HotelImage3 />]}
             />
-            <Map lat={39.9520921} lng={-75.1470951} />
+            <Map lat={39.945598} lng={-75.143375} />
           </div>
           <Description />
         </section>
