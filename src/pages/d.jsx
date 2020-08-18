@@ -12,6 +12,7 @@ function useInvitedAnalytics() {
     coming: [],
     notComing: [],
     plusOnes: [],
+    hasntRSVPd: [],
   })
   const [loading, setLoading] = React.useState(true)
 
@@ -117,6 +118,8 @@ export default function RSVP() {
           "Fetching people..."
         ) : (
             <>
+              <h1>In Person Guests</h1>
+              <hr />
               <CollapseList heading="[In Person] Who is coming (names)" invitees={getInPerson(analytics.coming)} />
               <CollapseList heading="[In Person] Who is coming (email list)" invitees={getInPerson(analytics.coming)}>
                 {getUniqueEmails(analytics.coming).join(",")}
@@ -125,6 +128,10 @@ export default function RSVP() {
                 heading="[In Person] Who isn't coming"
                 invitees={getInPerson(analytics.notComing)}
               />
+              <CollapseList heading="[In Person] Who hasn't RSVP'd" invitees={getInPerson(analytics.hasntRSVPd)} />
+              <br />
+              <h1>Virtual Guests</h1>
+              <hr />
               <CollapseList heading="[Virtual] Who is coming (names)" invitees={getVirtual(analytics.coming)} />
               <CollapseList heading="[Virtual] Who is coming (email list)" invitees={getVirtual(analytics.coming)}>
                 {getUniqueEmails(getVirtual(analytics.coming)).join(",")}
@@ -133,6 +140,10 @@ export default function RSVP() {
                 heading="[Virtual] Who isn't coming"
                 invitees={getVirtual(analytics.notComing)}
               />
+              <CollapseList heading="[Virtual] Who hasn't RSVP'd" invitees={getVirtual(analytics.hasntRSVPd)} />
+              <br />
+              <h1>General Guest Information</h1>
+              <hr />
               <CollapseList
                 heading="Who hasn't RSVPd"
                 invitees={analytics.hasntRSVPd}
