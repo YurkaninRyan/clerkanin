@@ -122,12 +122,18 @@ export default function RSVP() {
               <hr />
               <CollapseList heading="[In Person] Who is coming (names)" invitees={getInPerson(analytics.coming)} />
               <CollapseList heading="[In Person] Who is coming (email list)" invitees={getInPerson(analytics.coming)}>
-                {getUniqueEmails(analytics.coming).join(",")}
+                {getUniqueEmails(getInPerson(analytics.coming)).join(",")}
               </CollapseList>
               <CollapseList
-                heading="[In Person] Who isn't coming"
+                heading="[In Person] Who isn't coming (names)"
                 invitees={getInPerson(analytics.notComing)}
               />
+              <CollapseList
+                heading="[In Person] Who isn't coming (email list)"
+                invitees={getInPerson(analytics.notComing)}
+              >
+                {getUniqueEmails(getInPerson(analytics.notComing)).join(",")}
+                </CollapseList>
               <CollapseList heading="[In Person] Who hasn't RSVP'd" invitees={getInPerson(analytics.hasntRSVPd)} />
               <br />
               <h1>Virtual Guests</h1>
